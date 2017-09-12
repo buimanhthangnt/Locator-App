@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="locator_app">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locator App</title>
+    <script src="public/angular.min.js"></script>
+    <script>
+        angular.module("locator_app", []);
+    </script>
+    <script src="main.js"></script>
 </head>
 
-<body>
-    <h1>Welcome to Locator App </h1>
+<body ng-controller="mainCtrl">
+    <h1>Welcome to Locator App, {{author}} </h1>
 </body>
 
 </html>
