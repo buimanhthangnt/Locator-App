@@ -5,7 +5,10 @@ function config($routeProvider) {
 		.when('/', {
 			templateUrl: 'home/home.view.html',
 			controller: 'homeCtrl',
-
+		})
+		.when('/study', {
+			templateUrl: 'option/study.view.html',
+			controller: 'studyCtrl',
 		})
 		.otherwise({redirectTo: '/'});
 
