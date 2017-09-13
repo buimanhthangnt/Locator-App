@@ -1,6 +1,6 @@
 angular
 	.module('locator_app')
-	.controller('studyCtrl', homeCtrl);
+	.controller('studyCtrl', studyCtrl);
 
 	function studyCtrl () {
 		
