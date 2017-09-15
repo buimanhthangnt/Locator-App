@@ -10,6 +10,10 @@ function config($routeProvider, $locationProvider) {
 			templateUrl: 'option/study/study.view.html',
 			controller: 'studyCtrl',
 		})
+		.when('/location', {
+			templateUrl: 'locationDetail/locationDetail.view.html',
+			controller: 'locationDetailCtrl'
+		})
 		.otherwise({redirectTo: '/'});
 		$locationProvider.html5Mode(true);
 }
