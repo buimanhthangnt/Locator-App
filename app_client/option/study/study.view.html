@@ -9,8 +9,8 @@
   <div class="w3-row-padding">
     <div class="w3-third w3-container w3-margin-bottom imageWrapper" ng-repeat="location in data.locations">
       <div class="w3-card-2">
-        <a href="/location" class="detail">
-            <img src={{location.image}} style="width:100%" class="w3-hover-opacity">
+        <a href="/#/location/{{location._id}}" class="detail">
+            <img src="/images/study.jpg" style="width:100%" class="w3-hover-opacity">
             <a class="insideText" href="/location">
               <h5 class="name">Something about {{location.name}}</h5>
               <p>{{location.address}}</p>

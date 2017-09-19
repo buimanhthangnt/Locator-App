@@ -14,6 +14,10 @@ function config($routeProvider, $locationProvider) {
 			templateUrl: 'locationDetail/locationDetail.view.html',
 			controller: 'locationDetailCtrl'
 		})
+		.when('/location/:locationid', {
+			templateUrl: '/locationDetail/locationDetail.view.html',
+			controller: 'locationDetailCtrl',
+		})
 		.otherwise({redirectTo: '/'});
 		$locationProvider.html5Mode(true);
 }
