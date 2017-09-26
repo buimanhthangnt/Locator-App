@@ -1,53 +1,61 @@
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-.imageWrapper {
-  position: relative;
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway", sans-serif
 }
-.imageWrapper img {
-  display: block;
-}
-.imageWrapper .insideText {
-  opacity: 0;
-  position: absolute;
-  bottom: 73px;
-  left: 8px;
-  right: 8px;
-  line-height: 0.5;
-  padding: 10px 0px;
-  color: #ffffff;
-  background: #66D698;
-  text-decoration: none;
-  text-align: center;
-  -webkit-transition: opacity 500ms;
-  -moz-transition: opacity 500ms;
-  -o-transition: opacity 500ms;
-  transition: opacity 500ms;
 
+.imageWrapper {
+    position: relative;
 }
+
+.imageWrapper img {
+    display: block;
+}
+
+.imageWrapper .insideText {
+    opacity: 0;
+    position: absolute;
+    bottom: 73px;
+    left: 8px;
+    right: 8px;
+    line-height: 0.5;
+    padding: 10px 0px;
+    color: #ffffff;
+    background: #66D698;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms;
+}
+
 .imageWrapper:hover .insideText {
-  opacity: 0.8;
+    opacity: 0.8;
 }
 
 .rating {
-  color: #44A516;
-  padding: 0px 0px 0px 0px;
+    color: #44A516;
+    padding: 0px 0px 0px 0px;
 }
 
 .name {
-  padding: 0px 0px 0px 0px;
-  color: #0E4D81;
+    padding: 0px 0px 0px 0px;
+    color: #0E4D81;
 }
 
-.undertext{
-  padding: 1px 0px 0px 10px;
-  line-height: 0.5;
+.undertext {
+    padding: 1px 0px 0px 10px;
+    line-height: 0.5;
 }
+
 .navbar {
     padding: 10px;
 }
+
 .main {
     margin-top: 70px;
     margin-bottom: 20px;
 }
+
 .welcome {
     min-height: 600px;
     background: url('/images/homepage.jpg');
@@ -56,6 +64,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     text-align: center;
     padding-top: 150px;
 }
+
 .search-place {
     display: inline-block;
     padding: 4px 0;
@@ -63,12 +72,14 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     border-radius: 5px;
     width: 500px;
 }
+
 .search-icon {
     width: 32px;
     height: 32px;
     float: left;
     margin: 10px 8px 0 8px;
 }
+
 .input-search-place {
     border: none;
     font-size: 24px;
@@ -78,80 +89,84 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     width: 425px;
     margin-right: 12px;
 }
+
 .input-search-place:focus {
     outline: none;
 }
+
 .welcome-text {
     color: white;
     font-weight: 600;
     font-size: 45px;
 }
+
 .description-type {
     padding-top: 12px;
+    font-size: 20px;
 }
+
 .location-name {
     font-weight: 600;
     font-size: 20px;
 }
+
 .navbar-brand {
     font-weight: 600;
 }
-input[type=text], select {
-  width: 100%;
-  padding: 10px 12px;
-  margin: 4px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
 
 .addlocation {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  margin: auto;
-  width: 65%;
-  /* display: inline-block; */
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: auto;
+    width: 65%;
+    /* display: inline-block; */
+    input[type=text], select {
+        width: 100%;
+        padding: 10px 12px;
+        margin: 4px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
 }
 
 label {
-  font-weight: bold;
-  font-family: Calibri;
-  font-size: 20px;
-  text-align: left;
-  line-height: 200%;
+    font-weight: bold;
+    font-family: Calibri;
+    font-size: 20px;
+    text-align: left;
+    line-height: 200%;
 }
 
 .formTitle {
-  text-align: center;
-  font-weight: bold;
-  font-family: "Lato","Helvetica Neue", Helvetica;
-  font-size: 24px;
-  font-weight: 900;
-  line-height: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Lato", "Helvetica Neue", Helvetica;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 100%;
 }
 
 .form-group {
-  align-content: center;
-  /* text-align: center; */
+    align-content: center;
+    /* text-align: center; */
 }
 
 .control-label {
-  line-height: 200%;
+    line-height: 200%;
 }

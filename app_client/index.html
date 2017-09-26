@@ -7,22 +7,22 @@
 	<base href="/">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="w3/w3.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<script src="jquery.min.js"/>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 
-<body class="w3-light-grey w3-content" style="max-width:1600px" ng-view autoscroll="true">
+<body autoscroll="true">
+	<div ng-view></div>
 	<script src="public/angular.min.js"></script>
 	<script src="public/angular-route.min.js"></script>
 	<script src="main.js"></script>
-	<script src="home/home.controller.js"></script>
-	<script src="addLocation/addLocation.controller.js"></script>
-	<script src="locationDetail/locationDetail.controller.js"></script>
-	<script src="option/study/study.controller.js"></script>
-	<script src="common/sidebar/sidebar.directive.js"></script>
-	<script src="common/endcontent/endcontent.directive.js"></script>
+	<script src="components/home.controller.js"></script>
+	<script src="components/addLocation.controller.js"></script>
+	<script src="components/locationDetail.controller.js"></script>
+	<script src="components/study.controller.js"></script>
+	<script src="components/common/navigation.directive.js"></script>
+	<script src="components/common/myfooter.directive.js"></script>
 </body>
 </html>

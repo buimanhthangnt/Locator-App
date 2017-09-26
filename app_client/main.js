@@ -3,23 +3,23 @@ angular.module('locator_app', ['ngRoute']);
 function config($routeProvider, $locationProvider) {
 	$routeProvider
 		.when('/', {
-			templateUrl: 'home/home.view.html',
+			templateUrl: 'components/home.view.html',
 			controller: 'homeCtrl',
 		})
 		.when('/addlocation', {
-			templateUrl: 'addLocation/addLocation.view.html',
+			templateUrl: 'components/addLocation.view.html',
 			controller: 'addLocationCtrl',
 		})
 		.when('/study', {
-			templateUrl: 'option/study/study.view.html',
+			templateUrl: 'components/study.view.html',
 			controller: 'studyCtrl',
 		})
 		.when('/location', {
-			templateUrl: 'locationDetail/locationDetail.view.html',
+			templateUrl: 'components/locationDetail.view.html',
 			controller: 'locationDetailCtrl',
 		})
 		.when('/location/:locationid', {
-			templateUrl: '/locationDetail/locationDetail.view.html',
+			templateUrl: 'components/locationDetail.view.html',
 			controller: 'locationDetailCtrl',
 		})
 		.otherwise({redirectTo: '/'});

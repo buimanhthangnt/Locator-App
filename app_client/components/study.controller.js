@@ -7,11 +7,9 @@ angular
 			$http.get('/api/locations/study/')
 				.then(function success(response) {
 					$scope.data = {locations: response.data};
-					console.log($scope.data.locations);
 				}, function error(err) {
 					console.log(err);
 				});
 		};
 		studyList();
-		console.log("This is test");
 	}

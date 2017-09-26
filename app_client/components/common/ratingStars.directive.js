@@ -7,6 +7,6 @@ function ratingStars () {
     scope: {
       thisRating : '=rating'
     },
-    templateUrl: '/common/ratingStars/ratingStars.template.html'
+    templateUrl: 'components/common/ratingStars.template.html'
   };
 }
