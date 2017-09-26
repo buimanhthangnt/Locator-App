@@ -1,7 +1,17 @@
 angular
 	.module('locator_app')
-	.controller('locationDetailCtr', locationDetailCtr);
+	.controller('locationDetailCtrl', locationDetailCtrl);
 	
-	function locationDetailCtr () {
-		
+	function locationDetailCtrl ($scope, $http) {
+		console.log("This is test");
+		var studyList = function () {
+			$http.get('/api/locations/study/')
+				.then(function success(response) {
+					$scope.data = {locations: response.data};
+					console.log($scope.data.locations);
+				}, function error(err) {
+					console.log(err);
+				});
+		};
+		studyList();
 	}
