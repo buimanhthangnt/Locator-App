@@ -2,7 +2,7 @@ angular
 	.module('locator_app')
 	.controller('studyCtrl', studyCtrl);
 	function studyCtrl ($scope, $http) {
-		// var vm = this;
+		var vm = this;
 		var studyList = function () {
 			$http.get('/api/locations/study/')
 				.then(function success(response) {
@@ -13,4 +13,5 @@ angular
 				});
 		};
 		studyList();
+		console.log("This is test");
 	}

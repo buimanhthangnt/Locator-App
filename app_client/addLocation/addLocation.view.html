@@ -1,0 +1,72 @@
+<!-- Sidebar/menu -->
+<sidebar></sidebar>
+<!-- !PAGE CONTENT! -->
+<div style="margin-left:200px" ng-controller="locationDetailCtrl">
+  <!-- First Photo Grid-->
+  <div class="addlocation">
+    <form class="form-horizontal">
+      <div class="form-group">
+          <label class="col-sm-2 control-label">Location Name</label>
+          <div class="col-sm-10"><input type="text" name="" placeholder="Location name ..."></div>
+      </div>
+      
+      <div class="form-group">
+          <label class="col-sm-2 control-label">Location Type</label>
+          <div class="col-sm-10">
+              <select id="type" name="type" class="col-sm-10">
+                  <option value="study">STUDY</option>
+                  <option value="word">WORK</option>
+                  <option value="dating">DATING</option>
+              </select>
+          </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Address</label>
+        <div class="col-sm-10"><input type="text" name="" placeholder="Address ..."></div>
+      </div>
+      <label>Rating</label>
+      <input type="number" name="" placeholder="Rating ..."><br>
+      
+      <div class="form-group">
+          <label>Coordinates</label>
+          <div>
+              <input type="text" name="" placeholder="Longtitude ...">
+              <input type="text" name="" placeholder="Latitude ...">
+          </div>
+      </div>
+      
+      <label>Keywords</label><br>
+      <div>
+        <div class="col-sm-4">
+            <input type="checkbox" name="">Food<br>
+            <input type="checkbox" name="">Silence<br>
+            <input type="checkbox" name="">Premium Wifi<br>
+            <input type="checkbox" name="">Outdoor<br>
+        </div>
+        <div class="col-sm-4">
+            <input type="checkbox" name="">Drinks<br>
+            <input type="checkbox" name="">Gaming Room<br>
+            <input type="checkbox" name="">Overnight<br>
+            <input type="checkbox" name="">Power<br>
+        </div>
+      </div>
+      
+      <div class="form-group">
+          <label>Discount</label>
+          <div>
+              <input type="text" name="" placeholder="Discount ...">
+          </div>
+      </div>
+
+      <div>
+          <label>Opening Time</label>
+          <div>
+            <input type="text" name="" placeholder="Time">
+          </div>
+      </div>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  <endcontent></endcontent>
+</div>

@@ -1,12 +1,19 @@
 <!-- Sidebar/menu -->
 <sidebar></sidebar>
 <!-- !PAGE CONTENT! -->
-<div style="margin-left:200px">
+<div style="margin-left:200px" ng-controller="locationDetailCtrl">
   <!-- First Photo Grid-->
   <div class="w3-row-padding">
-    <h2 class="w3-padding-small" style="margin-bottom:-20px; text-decoration-line:underline; ">Location Name</h2>
+    <h2 class="w3-padding-small" style="margin-bottom:-20px; text-decoration-line:underline;">Location Name</h2>
     <p class="rating" rating-stars rating="data.location.rating"></p>
     <p class="w3-padding-small" style="margin-bottom:0px">Address here</p>
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-padding-small">
+      <a ng-repeat="location in data.locations">
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">{{location.keywords}} </span>
+      </a>
+    </div>
   </div>
   <div class="w3-row-padding">
     <div class="w3-padding-small w3-third">

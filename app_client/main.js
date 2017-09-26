@@ -6,13 +6,17 @@ function config($routeProvider, $locationProvider) {
 			templateUrl: 'home/home.view.html',
 			controller: 'homeCtrl',
 		})
+		.when('/addlocation', {
+			templateUrl: 'addLocation/addLocation.view.html',
+			controller: 'addLocationCtrl',
+		})
 		.when('/study', {
 			templateUrl: 'option/study/study.view.html',
 			controller: 'studyCtrl',
 		})
 		.when('/location', {
 			templateUrl: 'locationDetail/locationDetail.view.html',
-			controller: 'locationDetailCtrl'
+			controller: 'locationDetailCtrl',
 		})
 		.when('/location/:locationid', {
 			templateUrl: '/locationDetail/locationDetail.view.html',
