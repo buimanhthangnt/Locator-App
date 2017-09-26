@@ -43,9 +43,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 }
 
 input[type=text], select {
-  width: 80%;
-  padding: 12px 20px;
-  margin: 8px 0;
+  width: 100%;
+  padding: 10px 12px;
+  margin: 4px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -53,7 +53,7 @@ input[type=text], select {
 }
 
 input[type=submit] {
-  width: 80%;
+  width: 100%;
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -69,6 +69,35 @@ input[type=submit]:hover {
 
 .addlocation {
   border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
+  background-color: #5CC283;
+  padding: 30px;
+  margin: auto;
+  width: 65%;
+  /* display: inline-block; */
+}
+
+label {
+  font-weight: bold;
+  font-family: Calibri;
+  font-size: 20px;
+  text-align: left;
+  line-height: 200%;
+}
+
+.formTitle {
+  text-align: center;
+  font-weight: bold;
+  font-family: "Lato","Helvetica Neue", Helvetica;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 100%;
+}
+
+.form-group {
+  align-content: center;
+  /* text-align: center; */
+}
+
+.control-label {
+  line-height: 200%;
 }
