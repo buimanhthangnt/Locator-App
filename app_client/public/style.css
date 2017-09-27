@@ -158,7 +158,7 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #45a049;
 }
-  
+
 .addlocation {
    border-radius: 5px;
    background-color: #5CC283;
@@ -167,7 +167,7 @@ input[type=submit]:hover {
    width: 55%;
    /* display: inline-block; */
 }
-  
+
 label {
   font-weight: bold;
   font-family: Calibri;
@@ -175,7 +175,7 @@ label {
   text-align: left;
   line-height: 100%;
 }
-  
+
 .formTitle {
   text-align: center;
   font-weight: bold;
@@ -184,7 +184,7 @@ label {
   font-weight: 900;
   line-height: 150%;
 }
-  
+
 .form-group {
   align-content: center;
   /* text-align: center; */
