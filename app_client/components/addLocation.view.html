@@ -1,15 +1,15 @@
-<!-- Sidebar/menu -->
-<navigation></navigation>
+<div>
+	<navigation></navigation>
+</div>
 <!-- !PAGE CONTENT! -->
-<div style="margin-left:200px" ng-controller="locationDetailCtrl">
-	<!-- First Photo Grid-->
+<div ng-controller="locationDetailCtrl">
 	<div class="addlocation">
 		<form class="form-horizontal">
 			<h1 class="formTitle">LET ADD A FANTASTING PLACE</h1>
 			<div class="form-group">
 				<label class="control-label">Location Name</label>
 				<div class="">
-					<input type="text" name="" placeholder="Location name ...">
+					<input class="inputForm" type="text" name="" placeholder="Location name ...">
 				</div>
 			</div>
 
@@ -27,65 +27,66 @@
 			<div class="form-group">
 				<label class="control-label">Address</label>
 				<div class="">
-					<input type="text" name="" placeholder="Address ...">
+					<input class="inputForm" type="text" name="" placeholder="Address ...">
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label>Rating</label>
-				<div class="control-label">
-						<input type="number" name="" placeholder="Rating ..."><br>
+				<label class="control-label">Rating</label>
+				<div class="">
+						<input class="inputnumber" type="number" name="" placeholder="Rating ..."><br>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label>Coordinates</label>
+				<label class="control-label">Coordinates</label>
 				<div class="coordinates">
-					<input type="number" name="" placeholder="Longtitude ...">
-					<input type="number" name="" placeholder="Latitude ...">
+					<input class="inputnumber" type="number" name="" placeholder="Longtitude ...">
+					<input class="inputnumber" type="number" name="" placeholder="Latitude ...">
 				</div>
 			</div>
 
 
 			<div class="form-group">
-				<label>Keywords</label><br>
+				<label class="control-label">Keywords</label>
 			</div>
-			<div class="checkbox">
+			<div class="">
 				<div class="w3-quarter">
-					<input type="checkbox" name="">Food<br>
-					<input type="checkbox" name="">Silence<br>
+					<input class="" type="checkbox" name="">Food<br>
+					<input class="" type="checkbox" name="">Silence<br>
 				</div>
 				<div class="w3-quarter">
-					<input type="checkbox" name="">Premium Wifi<br>
-					<input type="checkbox" name="">Outdoor<br>
+					<input class="" type="checkbox" name="">Premium Wifi<br>
+					<input class="" type="checkbox" name="">Outdoor<br>
 				</div>
 				<div class="w3-quarter">
-					<input type="checkbox" name="">Drinks<br>
-					<input type="checkbox" name="">Gaming Room<br>
+					<input class="" type="checkbox" name="">Drinks<br>
+					<input class="" type="checkbox" name="">Gaming Room<br>
 				</div>
 				<div class="w3-quarter">
-					<input type="checkbox" name="">Overnight<br>
-					<input type="checkbox" name="">Power<br>
+					<input class="" type="checkbox" name="">Overnight<br>
+					<input class="" type="checkbox" name="">Power<br>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label>Discount</label>
+				<label class="control-label">Discount</label>
 				<div>
-					<input type="text" name="" placeholder="Discount ...">
+					<input class="inputForm" type="text" name="" placeholder="Discount ...">
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label>Opening Time</label>
+				<label class="control-label">Opening Time</label>
 				<div>
-					<input type="text" name="" placeholder="Time ...">
+					<input class="inputForm" type="text" name="" placeholder="Time ...">
 				</div>
 			</div>
-			<div class="form-group">
-				<input type="submit" value="Submit">
+
+			<div class="submit">
+				<input type="submit" value="SUBMIT">
 			</div>
 		</form>
 	</div>
-	<myfooter></myfooter>
 </div>
+<myfooter></myfooter>
