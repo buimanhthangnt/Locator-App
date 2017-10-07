@@ -33,8 +33,16 @@ function addLocationCtrl($http) {
         }
         let isFilled = true;
         vm.openingTimes.forEach((ot) => {
-            for (let prop in ot) {
-                if (ot[prop] == null) isFilled = false;
+            if (ot['state'] == true) {
+                for (let prop in ot) {
+                    if (ot[prop] == null) isFilled = false;
+                }
+            } else {
+                if (!ot['day']) isFilled = false;
+                else {
+                    ot['close'] = "";
+                    ot['open'] = "";
+                }
             }
         });
         if (!isFilled) {
