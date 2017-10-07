@@ -6,6 +6,7 @@ var ctrlReviews = require('../controllers/reviews');
 
 // locations
 router.get('/locations/study', ctrlLocations.locationsStudy);
+router.post('/locations/addlocation', ctrlLocations.addLocation);
 // router.get('/locations/work', ctrlLocations.locationsListByDistance);
 // router.get('/locations/dating', ctrlLocations.locationsListByDistance);
 // router.post('/locations', ctrlLocations.locationsCreate);

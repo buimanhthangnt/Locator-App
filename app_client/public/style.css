@@ -164,8 +164,7 @@ input[type=submit]:hover {
    background-color: #5CC283;
    padding: 40px;
    margin-top: 40px;
-   width: 55%;
-   /* display: inline-block; */
+   width: 800px;
 }
 
 label {

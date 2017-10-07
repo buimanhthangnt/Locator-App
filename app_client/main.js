@@ -9,6 +9,7 @@ function config($routeProvider, $locationProvider) {
 		.when('/addlocation', {
 			templateUrl: 'components/addLocation.view.html',
 			controller: 'addLocationCtrl',
+			controllerAs: 'vm'
 		})
 		.when('/study', {
 			templateUrl: 'components/study.view.html',

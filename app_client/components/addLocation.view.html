@@ -1,90 +1,86 @@
-<div>
-	<navigation></navigation>
-</div>
+<navigation></navigation>
 <!-- !PAGE CONTENT! -->
-<div ng-controller="locationDetailCtrl">
+<div>
 	<div class="addlocation">
 		<form class="form-horizontal">
 			<h1 class="formTitle">LET ADD A FANTASTING PLACE</h1>
 			<div class="form-group">
 				<label class="control-label">Location Name</label>
-				<div class="">
-					<input class="inputForm" type="text" name="" placeholder="Location name ...">
-				</div>
+				<input ng-model="vm.formData.name" class="inputForm" type="text" placeholder="Location name ...">
 			</div>
 
 			<div class="form-group">
 				<label class="control-label">Location Type</label>
-				<div class="">
-					<select id="type" name="type" class="">
-            <option value="study">STUDY</option>
-            <option value="word">WORK</option>
-            <option value="dating">DATING</option>
-          </select>
-				</div>
+				<select ng-model="vm.formData.type">
+		            <option value="study">STUDY</option>
+		            <option value="word">WORK</option>
+		            <option value="dating">DATING</option>
+      			</select>
 			</div>
 
 			<div class="form-group">
 				<label class="control-label">Address</label>
-				<div class="">
-					<input class="inputForm" type="text" name="" placeholder="Address ...">
-				</div>
+				<input ng-model="vm.formData.address" class="inputForm" type="text"placeholder="Address ...">
 			</div>
 
 			<div class="form-group">
 				<label class="control-label">Rating</label>
-				<div class="">
-						<input class="inputnumber" type="number" name="" placeholder="Rating ..."><br>
-				</div>
+				<select ng-model="vm.formData.rating">
+		            <option value=1>1</option>
+		            <option value=2>2</option>
+		            <option value=3>3</option>
+					<option value=4>4</option>
+					<option value=5>5</option>
+      			</select>
 			</div>
 
 			<div class="form-group">
 				<label class="control-label">Coordinates</label>
 				<div class="coordinates">
-					<input class="inputnumber" type="number" name="" placeholder="Longtitude ...">
-					<input class="inputnumber" type="number" name="" placeholder="Latitude ...">
+					<input ng-model="vm.formData.longitude" class="inputnumber" type="number" placeholder="Longtitude ...">
+					<input ng-model="vm.formData.latitude" class="inputnumber" type="number" placeholder="Latitude ...">
 				</div>
 			</div>
 
 
 			<div class="form-group">
-				<label class="control-label">Keywords</label>
-			</div>
-			<div class="">
+				<div><label class="control-label">Keywords<br></label></div>
 				<div class="w3-quarter">
-					<input class="" type="checkbox" name="">Food<br>
-					<input class="" type="checkbox" name="">Silence<br>
+					<label><input type="checkbox" ng-model="vm.formData.checkboxFood"> Food<br></label><br>
+					<label><input type="checkbox" ng-model="vm.formData.checkboxSilence"> Silence<br></label>
 				</div>
 				<div class="w3-quarter">
-					<input class="" type="checkbox" name="">Premium Wifi<br>
-					<input class="" type="checkbox" name="">Outdoor<br>
+					<label><input type="checkbox" ng-model="vm.formData.checkboxWifi"> Premium Wifi<br></label>
+					<label><input type="checkbox" ng-model="vm.formData.checkboxOutdoor"> Outdoor<br></label>
 				</div>
 				<div class="w3-quarter">
-					<input class="" type="checkbox" name="">Drinks<br>
-					<input class="" type="checkbox" name="">Gaming Room<br>
+					<label><input type="checkbox" ng-model="vm.formData.checkboxDrink"> Drinks<br></label>
+					<label><input type="checkbox" ng-model="vm.formData.checkboxGaming"> Gaming Room<br></label>
 				</div>
 				<div class="w3-quarter">
-					<input class="" type="checkbox" name="">Overnight<br>
-					<input class="" type="checkbox" name="">Power<br>
+					<label><input type="checkbox" ng-model="vm.formData.checkboxOvernight"> Overnight<br></label>
+					<label><input type="checkbox" ng-model="vm.formData.checkboxPower"> Power<br></label>
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label class="control-label">Discount</label>
-				<div>
-					<input class="inputForm" type="text" name="" placeholder="Discount ...">
-				</div>
+				<input ng-model="vm.formData.discount" class="inputForm" type="text" placeholder="Discount ...">
 			</div>
 
 			<div class="form-group">
 				<label class="control-label">Opening Time</label>
-				<div>
-					<input class="inputForm" type="text" name="" placeholder="Time ...">
+				<div ng-repeat="openingTime in vm.openingTimes">
+					<label><input type="checkbox" ng-model="openingTime.state"> Is open?</label>
+					<input ng-model="openingTime.day" class="inputForm" type="text" placeholder="Day ...">
+					<input ng-model="openingTime.open" class="inputForm" type="text" placeholder="Opening time ...">
+					<input ng-model="openingTime.close" class="inputForm" type="text" placeholder="Closing time ...">
 				</div>
+				<div><button ng-click="vm.pushDefaultOpeningTime()" class="btn btn-success">Add opening time</button></div>
 			</div>
 
 			<div class="submit">
-				<input type="submit" value="SUBMIT">
+				<input type="submit" value="Add location" ng-click="vm.onSubmit()">
 			</div>
 		</form>
 	</div>
