@@ -2,23 +2,23 @@
 <navigation></navigation>
 <!-- !PAGE CONTENT! -->
 <div class="main container" ng-controller="studyCtrl">
-    <!-- First Photo Grid-->
-    <div class="w3-row-padding">
-        <h1 class="w3-center w3-padding">Pick a place to study</h1>
-    </div>
-    <div class="row">
-        <div class="col-md-4 col-sm-6" ng-repeat="location in data.locations">
-            <div class="thumbnail">
-                <a href="/location">
-                  <img src="images/dating.jpg" alt="Lights" style="width:100%">
-                  <div class="w3-container undertext">
-                    <h5 class="location-name">{{location.name}}</h5>
-                    <p class="rating">Rating: {{location.rating}}</p>
-                    <p>Something about location</p>
-                  </div>
-                </a>
+	<!-- First Photo Grid-->
+	<div class="w3-row-padding">
+		<h1 class="w3-center w3-padding">Pick a place to study</h1>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-sm-6" ng-repeat="location in data.locations">
+			<div class="thumbnail">
+				<a href="/location">
+          <img src="images/dating.jpg" alt="Lights" style="width:100%">
+            <div class="w3-container undertext">
+              <h5 class="location-name">{{location.name}}</h5>
+              <p class="rating">Rating: {{location.rating}}</p>
+              <p>Something about location</p>
             </div>
-        </div>
-    </div>
+          </a>
+			</div>
+		</div>
+	</div>
 </div>
 <myfooter></myfooter>
