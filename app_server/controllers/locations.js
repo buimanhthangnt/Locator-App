@@ -21,7 +21,7 @@ module.exports.locationList = function (req, res) {
 			if (err) throw err;
 			results = JSON.stringify(results);
 			console.log(results);
-			sendJsonResponse(res, 200, results);
+			sendJsonResponse(res, 200, JSON.parse(results));
 		});
 	});
 }
