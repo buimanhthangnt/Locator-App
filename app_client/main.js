@@ -31,6 +31,10 @@ function config($routeProvider, $locationProvider) {
 			templateUrl: 'components/locationDetail.view.html',
 			controller: 'locationDetailCtrl',
 		})
+		.when('/aboutUs', {
+			templateUrl: 'components/aboutPage.view.html',
+			controller: '',
+		})
 		.otherwise({redirectTo: '/'});
 		$locationProvider.html5Mode(true);
 }
