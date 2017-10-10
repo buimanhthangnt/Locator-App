@@ -7,7 +7,7 @@
 		<h1 class="w3-center w3-padding">Pick a place to study</h1>
 	</div>
 	<div class="row">
-		<div class="col-md-4 col-sm-6" ng-repeat="location in data.locations">
+		<div class="col-md-4 col-sm-6" ng-repeat="location in locations">
 			<div class="thumbnail">
 				<a href="/location">
           <img src="images/study.jpg" alt="Lights" style="width:100%">
@@ -15,7 +15,7 @@
               <h5 class="location-name">{{location.name}}</h5>
               <p class="rating">Rating: {{location.rating}}</p>
 							<p>{{location.address}}</p>
-							<p>{{location.keyword}}</p>
+							<p ng-repeat="key in location.keywords">{{key}}</p>
             </div>
           </a>
 			</div>

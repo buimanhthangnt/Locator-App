@@ -6,8 +6,8 @@ angular
 		var studyList = function () {
 			$http.get('/api/locations/study')
 				.then(function success(response) {
-					$scope.data = {locations: response.data};
-					console.log($scope.data.locations);
+					$scope.locations = response.data;
+					console.log($scope.data);
 				}, function error(err) {
 					console.log(err);
 				});
