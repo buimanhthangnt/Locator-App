@@ -11,9 +11,17 @@ function config($routeProvider, $locationProvider) {
 			controller: 'addLocationCtrl',
 			controllerAs: 'vm'
 		})
-		.when('/study', {
+		.when('/locations/type/study', {
 			templateUrl: 'components/study.view.html',
 			controller: 'studyCtrl',
+		})
+		.when('/locations/type/work', {
+			templateUrl: 'components/work.view.html',
+			controller: 'workCtrl',
+		})
+		.when('/locations/type/dating', {
+			templateUrl: 'components/dating.view.html',
+			controller: 'datingCtrl',
 		})
 		.when('/location', {
 			templateUrl: 'components/locationDetail.view.html',
