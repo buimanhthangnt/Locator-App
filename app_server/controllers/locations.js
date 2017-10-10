@@ -5,8 +5,13 @@ let sendJsonResponse = function (res, status, content) {
 	res.json(content);
 };
 
-module.exports.locationStudy = function (req, res) {
-	let sql = "SELECT * FROM locations where type = 'study'";
+module.exports.locationList = function (req, res) {
+	let type = req.params.type;
+	if (type != 'study' && type != 'work' && type != 'dating') {
+		sendJsonResponse(res, 400, {err: true, msg: 'Url not found'});
+		return;
+	}
+	let sql = `SELECT * FROM locations where type = "${type}"`;
 	db.connect().then((connection) => {
 		connection.query(sql, (err, results, fields) => {
 			if (err) sendJsonResponse(res, 400, { err: true, msg: err });

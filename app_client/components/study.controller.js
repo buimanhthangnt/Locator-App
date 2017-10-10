@@ -4,7 +4,7 @@ angular
 	function studyCtrl ($scope, $http) {
 		var vm = this;
 		var studyList = function () {
-			$http.get('/api/locations/study')
+			$http.get('/api/locations/type/study')
 				.then(function success(response) {
 					$scope.locations = response.data;
 					console.log($scope.data);
