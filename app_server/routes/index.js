@@ -10,7 +10,7 @@ router.post('/locations/addlocation', ctrlLocations.addLocation);
 // router.get('/locations/work', ctrlLocations.locationsListByDistance);
 // router.get('/locations/dating', ctrlLocations.locationsListByDistance);
 // router.post('/locations', ctrlLocations.locationsCreate);
-// router.get('/locations/:locationid', ctrlLocations.locationsReadOne);
+router.get('/locations/:locationid', ctrlLocations.locationsReadOne);
 // router.put('/locations/:locationid', ctrlLocations.locationsUpdateOne);
 // router.delete('/locations/:locationid', ctrlLocations.locationsDeleteOne);
 // // reviews
