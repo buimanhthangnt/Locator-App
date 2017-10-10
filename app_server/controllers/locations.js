@@ -15,12 +15,14 @@ module.exports.locationsStudy = function(req, res) {
 }
 
 module.exports.locationList = function (req, res) {
-	// let sql = "SELECT * FROM locations where type = 'study'";
-	let sql = "select distinct * from locations inner join keywords on keywords.location_id = locations.id where type = 'study'";
+	let sql = "SELECT * FROM locations where type = 'study'";
+	// let sql = "select distinct * from locations inner join keywords on keywords.location_id = locations.id where type = 'study'";
 	db.connect().then((connection) => {
 		connection.query(sql, (err, results, fields) => {
 			if (err) throw err;
-			else sendJsonResponse(res, 200, results);
+			results = JSON.stringify(results);
+			// console.log(results);
+			sendJsonResponse(res, 200, results);
 		});
 	});
 }
