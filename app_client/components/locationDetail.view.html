@@ -2,17 +2,15 @@
 <navigation></navigation>
 <!-- !PAGE CONTENT! -->
 <div class="main container" ng-controller="locationDetailCtrl">
-  <!-- First Photo Grid-->
   <div class="w3-row-padding">
-    <h2 class="w3-padding-small" style="margin-bottom:-20px; text-decoration-line:underline;">Location Name</h2><br>
+    <h2 class="w3-padding-small" style="margin-bottom:-20px; text-decoration-line:underline;">{{ data.name }}</h2><br>
     <p class="rating w3-padding-small" rating-stars rating="data.location.rating"></p>
-    <p class="w3-padding-small" style="margin-bottom:0px">Address here</p>
+    <p class="w3-padding-small" style="margin-bottom:0px">{{ data1 }}</p>
   </div>
   <div class="w3-row-padding">
     <div class="w3-padding-small">
       <a href="" ng-repeat="location in data.locations">
-        <span class="w3-tag w3-grey w3-small w3-margin-bottom"> {{location.keywords[1]}} </span>
-        <!-- the line above has been hardcoded by The -->
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom"> {{data.keywords[1]}} </span>
       </a>
     </div>
   </div>

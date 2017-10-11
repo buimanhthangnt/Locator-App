@@ -23,10 +23,6 @@ function config($routeProvider, $locationProvider) {
 			templateUrl: 'components/dating.view.html',
 			controller: 'datingCtrl',
 		})
-		.when('/location', {
-			templateUrl: 'components/locationDetail.view.html',
-			controller: 'locationDetailCtrl',
-		})
 		.when('/location/:locationid', {
 			templateUrl: 'components/locationDetail.view.html',
 			controller: 'locationDetailCtrl',
