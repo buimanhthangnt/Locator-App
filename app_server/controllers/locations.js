@@ -111,7 +111,7 @@ module.exports.locationsReadOne = function (req, res) {
 			if (err) sendJsonResponse(res, 400, { err: true, msg: 'Cannot find location' });
 			else {
 				let locations = results;
-				let sql2 = "SELECT * FROM keywords";
+				let sql2 = `SELECT * FROM keywords WHERE location_id="${id}"`;
 				connection.query(sql2, (err2, results2, fields2) => {
 					if (err2) sendJsonResponse(res, 400, { err: true, msg: err2 });
 					else {
@@ -126,7 +126,7 @@ module.exports.locationsReadOne = function (req, res) {
 								}
 							}
 						});
-						let sql3 = "SELECT * FROM opening_times";
+						let sql3 = `SELECT * FROM opening_times WHERE location_id="${id}"`;
 						connection.query(sql3, (err3, results3, field3) => {
 							if (err3) sendJsonResponse(res, 400, { err: true, msg: err3 });
 							else {
