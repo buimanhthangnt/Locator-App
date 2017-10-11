@@ -10,7 +10,7 @@ exports.connect = function () {
         database: 'locator_app'
     });
     return new Promise((resolve, reject) => {
-        resolve(pool);
+        resolve();
     });
 }
 exports.insert = function (sql, values) {
@@ -20,4 +20,12 @@ exports.insert = function (sql, values) {
 			else return resolve(results);
 		});
 	});
+}
+exports.select = function (sql) {
+    return new Promise((resolve, reject) => {
+        pool.query(sql, (err, results, fields) => {
+            if (err) return reject(err);
+            else return resolve(results);
+        });
+    });
 }

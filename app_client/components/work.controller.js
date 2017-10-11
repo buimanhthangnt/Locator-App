@@ -6,7 +6,7 @@ function workCtrl ($scope, $http) {
   var workList = function () {
     $http.get('/api/locations/type/work')
       .then(function success(response) {
-        $scope.locations = response.data;
+        $scope.locations = response.data.data;
         console.log($scope.data);
       }, function error(err) {
         console.log(err);
