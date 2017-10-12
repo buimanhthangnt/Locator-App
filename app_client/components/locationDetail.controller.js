@@ -5,11 +5,10 @@ angular
 	function locationDetailCtrl ($scope, $http, $routeParams) {
 		// let id = $routeParams.locationid;
 		// console.log($routeParams.locationid);
-		$scope.data1 = "Test";
 		var studyList = function () {
 			$http.get('/api/locations/1') // this is hardcode, it has to be fixed
 				.then(function success(response) {
-					$scope.data = response.data[0];
+					$scope.data = response.data.data[0].name;
 					console.log($scope.data);
 				}, function error(err) {
 					console.log(err);
