@@ -11,11 +11,11 @@
 			<div class="thumbnail">
 				<a href="/location/{{ location.id }}">
           <img src="images/dating.jpg" alt="Lights" style="width:100%">
-            <div class="w3-container undertext">
+            <div class="w3-container">
               <h5 class="location-name">{{location.name}}</h5>
-              <p class="rating">Rating: {{location.rating}}</p>
+							<p class="rating w3-padding-small" rating-stars rating="location.rating"></p>
 							<p>{{location.address}}</p>
-							<p ng-repeat="key in location.keywords">{{key}}</p>
+							<a ng-repeat="key in location.keywords"><span class="w3-tag w3-teal"> {{key}} </span></a>
             </div>
           </a>
 			</div>

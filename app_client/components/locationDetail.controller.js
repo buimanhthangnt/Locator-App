@@ -9,7 +9,6 @@ function locationDetailCtrl($routeParams, $http, $scope) {
 	$http.get('/api/locations/' + id)
 		.then(function success(response) {
 			vm.data = response.data.data;
-			console.log(response.data.data.name);
 		}, function error(err) {
 			console.log(err);
 		});
