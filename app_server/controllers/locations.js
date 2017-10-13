@@ -94,7 +94,7 @@ module.exports.addLocation = function (req, res) {
 }
 
 module.exports.locationsReadOne = function (req, res) {
-	let locations;
+	let location;
 	let id = req.params.locationid;
 	db.connect()
 		.then(() => {
@@ -102,38 +102,27 @@ module.exports.locationsReadOne = function (req, res) {
 			return db.select(sql);
 		})
 		.then(_locations => {
-			locations = _locations;
+			if (_locations.length == 0) throw new Error ("No location found.");
+			location = _locations[0];
 			let sql = `SELECT * FROM keywords WHERE location_id="${id}"`;
 			return db.select(sql);
 		})
 		.then(_keywords => {
-			let currentIndex = 0;
-			locations.forEach((location) => {
-				location.keywords = [];
-				for (let i = currentIndex; i < _keywords.length; i++) {
-					if (_keywords[i].location_id == location.id) location.keywords.push(_keywords[i].keyword);
-					else if (_keywords[i].location_id > location.id) {
-						currentIndex = i;
-						break;
-					}
-				}
-			});
+			let keywords = [];
+			_keywords.forEach((_keyword) => {
+				keywords.push(_keyword.keyword);
+			})
+			location.keywords = keywords;
 			let sql = `SELECT * FROM opening_times WHERE location_id="${id}"`;
 			return db.select(sql);
 		})
 		.then(_opening_times => {
-			let currentIndex = 0;
-			locations.forEach((location) => {
-				location.openingTimes = [];
-				for (let i = currentIndex; i < _opening_times.length; i++) {
-					if (_opening_times[i].location_id == location.id) location.openingTimes.push(_opening_times[i]);
-					else if (_opening_times[i].location_id > location.id) {
-						currentIndex = i;
-						break;
-					}
-				}
-			});
-			sendJsonResponse(res, 200, {err: false, data: locations, msg: 'Success'});
+			let opening_times = [];
+			_opening_times.forEach((_opening_time) => {
+				opening_times.push(_opening_time);
+			})
+			location.opening_times = opening_times;
+			sendJsonResponse(res, 200, {err: false, data: location, msg: 'Success'});
 		})
 		.catch(err => {
 			console.error(err);
