@@ -1,7 +1,9 @@
-angular
-	.module('locator_app')
-	.controller('homeCtrl', homeCtrl);
+(function () {
+	angular
+		.module('locator_app')
+		.controller('homeCtrl', homeCtrl);
 
-	function homeCtrl () {
-		
+	function homeCtrl() {
+
 	}
+})();

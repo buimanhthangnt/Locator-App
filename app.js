@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
+// var uglifyJs = require('uglify-js');
+// var fs = require('fs');
 
 var routeAPI = require('./app_server/routes/index');
 var users = require('./app_server/routes/users');
@@ -14,6 +16,29 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'jade');
+
+// var client_public_files = [
+//   'app_client/main.js',
+//   'app_client/components/home.controller.js',
+//   'app_client/components/addLocation.controller.js',
+//   'app_client/components/locationDetail.controller.js',
+//   'app_client/components/location_types/study.controller.js',
+//   'app_client/components/location_types/work.controller.js',
+//   'app_client/components/location_types/dating.controller.js',
+//   'app_client/components/common/navigation.directive.js',
+//   'app_client/components/common/myfooter.directive.js',
+//   'app_client/components/common/ratingStars.directive.js'
+// ];
+// var filesContent = client_public_files.map((file) => {
+//   return fs.readFileSync(file, 'utf8');
+// });
+// console.log(filesContent);
+// var uglified = uglifyJs.minify(filesContent);
+// console.log(uglified);
+// fs.writeFile('app_client/public/locator_app.min.js', uglified.code, (err) => {
+//   if (err) console.log("minify", err);
+//   else console.log('Generated and saved: locator_app.min.js');
+// });
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'app_client', 'public', 'favicon.ico')));
