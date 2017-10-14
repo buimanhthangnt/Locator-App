@@ -15,10 +15,17 @@ exports.connect = function () {
 }
 exports.insert = function (sql, values) {
     return new Promise((resolve, reject) => {
-		pool.query(sql, values, (err, results, fields) => {
-			if (err) return reject(err);
-			else return resolve(results);
-		});
+        if (!values) {
+            pool.query(sql, (err, results, fields) => {
+                if (err) return reject(err);
+                else return resolve(results);
+            });
+        } else {
+            pool.query(sql, values, (err, results, fields) => {
+                if (err) return reject(err);
+                else return resolve(results);
+            });
+        }
 	});
 }
 exports.select = function (sql) {

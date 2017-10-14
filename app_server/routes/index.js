@@ -3,6 +3,7 @@ var router = express.Router();
 
 var ctrlLocations = require('../controllers/locations');
 var ctrlReviews = require('../controllers/reviews');
+var authen = require('../authen/authentication');
 
 // locations
 router.get('/locations/type/:type', ctrlLocations.locationList);
@@ -18,7 +19,7 @@ router.get('/locations/:locationid', ctrlLocations.locationsReadOne);
 // router.get('/locations/:locationid/reviews/:reviewid', ctrlReviews.reviewsReadOne);
 // router.put('/locations/:locationid/reviews/:reviewid', auth, ctrlReviews.reviewsUpdateOne);
 // router.delete('/locations/:locationid/reviews/:reviewid', auth, ctrlReviews.reviewsDeleteOne);
-// router.post('/register', ctrlAuth.register);
+router.post('/register', authen.register);
 // router.post('/login', ctrlAuth.login);
 
 module.exports = router;

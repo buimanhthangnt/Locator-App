@@ -10,7 +10,7 @@ module.exports.locationList = function (req, res) {
 	db.connect()
 		.then(() => {
 			let type = req.params.type;
-			if (type != 'study' && type != 'work' && type != 'dating') throw new Error('Not found');
+			if (type != 'study' && type != 'work' && type != 'dating') throw new Error("Not found");
 			let sql = `SELECT * FROM locations where type = "${type}"`;
 			return db.select(sql);
 		})
