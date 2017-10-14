@@ -26,6 +26,7 @@ function config($routeProvider, $locationProvider) {
 		.when('/location/:locationid', {
 			templateUrl: 'components/locationDetail.view.html',
 			controller: 'locationDetailCtrl',
+			controllerAs: 'vm'
 		})
 		.when('/aboutUs', {
 			templateUrl: 'components/aboutPage.view.html',

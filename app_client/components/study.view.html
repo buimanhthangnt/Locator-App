@@ -10,14 +10,27 @@
 		<div class="col-md-4 col-sm-6" ng-repeat="location in locations">
 			<div class="thumbnail">
 				<a href="/location/{{ location.id }}">
-          <img src="images/study.jpg" alt="Lights" style="width:100%">
-            <div class="w3-container undertext">
-              <h5 class="location-name">{{location.name}}</h5>
-              <p class="rating">Rating: {{location.rating}}</p>
-							<p>{{location.address}}</p>
-							<p ng-repeat="key in location.keywords">{{key}}</p>
-            </div>
-          </a>
+					<img src="images/study.jpg" alt="Lights" style="width:100%">
+					<div class="w3-container">
+						<div class="w3-row">
+							<div class="w3-twothird">
+								<h5 class="location-name">{{location.name}}</h5>
+								<p class="rating" rating-stars rating="location.rating"></p>
+							</div>
+							<div class="w3-third">
+									<h6 class="location-address">{{location.address}}</h6>
+								</div>
+							<!-- <div class="w3-third">
+								<p class="location-address">{{location.address}}</p>
+							</div> -->
+						</div>
+						<div class="w3-row">
+							<a ng-repeat="key in location.keywords">
+								<span class="w3-tag w3-teal"> {{key}} </span>
+							</a>
+						</div>
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>

@@ -3,14 +3,14 @@
 <!-- !PAGE CONTENT! -->
 <div class="main container" ng-controller="locationDetailCtrl">
   <div class="w3-row-padding">
-    <h2 class="w3-padding-small" style="margin-bottom:-20px; text-decoration-line:underline;">{{ data.name }}</h2><br>
-    <p class="rating w3-padding-small" rating-stars rating="data.location.rating"></p>
-    <p class="w3-padding-small" style="margin-bottom:0px">{{ data1 }}</p>
+    <h2 class="w3-padding-small" style="margin-bottom:-20px; text-decoration-line:underline;">{{ vm.data.name }}</h2><br>
+    <p class="w3-padding-small" style="margin-bottom:0px">{{ vm.data.address }}</p>
+    <p class="rating w3-padding-small" rating-stars rating="vm.data.rating"></p>
   </div>
   <div class="w3-row-padding">
     <div class="w3-padding-small">
-      <a href="" ng-repeat="location in data.locations">
-        <span class="w3-tag w3-grey w3-small w3-margin-bottom"> {{data.keywords[1]}} </span>
+      <a href="" ng-repeat="keyword in vm.data.keywords">
+        <span class="w3-tag w3-teal"> {{keyword}} </span>
       </a>
     </div>
   </div>
