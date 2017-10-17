@@ -8,10 +8,13 @@ var authen = require('../authen/authentication');
 // locations
 router.get('/locations/type/:type', ctrlLocations.locationList);
 router.post('/locations/addlocation', ctrlLocations.addLocation);
+router.get('/locations/:locationid', ctrlLocations.locationsReadOne);
+
+router.post('/register', authen.register);
+router.post('/login', authen.login);
 // router.get('/locations/work', ctrlLocations.locationsListByDistance);
 // router.get('/locations/dating', ctrlLocations.locationsListByDistance);
 // router.post('/locations', ctrlLocations.locationsCreate);
-router.get('/locations/:locationid', ctrlLocations.locationsReadOne);
 // router.put('/locations/:locationid', ctrlLocations.locationsUpdateOne);
 // router.delete('/locations/:locationid', ctrlLocations.locationsDeleteOne);
 // // reviews
@@ -19,7 +22,5 @@ router.get('/locations/:locationid', ctrlLocations.locationsReadOne);
 // router.get('/locations/:locationid/reviews/:reviewid', ctrlReviews.reviewsReadOne);
 // router.put('/locations/:locationid/reviews/:reviewid', auth, ctrlReviews.reviewsUpdateOne);
 // router.delete('/locations/:locationid/reviews/:reviewid', auth, ctrlReviews.reviewsDeleteOne);
-router.post('/register', authen.register);
-// router.post('/login', ctrlAuth.login);
 
 module.exports = router;

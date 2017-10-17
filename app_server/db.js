@@ -4,7 +4,7 @@ let pool = null;
 
 exports.connect = function () {
     pool = mysql.createPool({
-        host: 'localhost',
+        host: '127.0.0.1',
         user: 'root',
         password: '',
         database: 'locator_app'
