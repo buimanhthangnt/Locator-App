@@ -16,7 +16,7 @@
 		vm.onSubmit = () => {
 			let form = vm.formData;
 			if (!form || !form.name || !form.type || !form.address || !form.rating || !form.longitude
-				|| !form.latitude || !form.discount || vm.openingTimes.length == 0) {
+				|| !form.latitude || !form.discount || !form.imageLink ||vm.openingTimes.length == 0) {
 				alert('All fields are required!');
 				return;
 			}
@@ -60,6 +60,7 @@
 				longitude: form.longitude,
 				latitude: form.latitude,
 				discount: form.discount,
+				imageLink: form.imageLink,
 				openingTimes: vm.openingTimes
 			}).then((res) => {
 				alert(res.data.msg);

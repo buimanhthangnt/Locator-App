@@ -1,138 +1,138 @@
 body, h1, h2, h3, h4, h5, h6 {
-    font-family: "Raleway", sans-serif
+	font-family: "Raleway", sans-serif
 }
 
 .imageWrapper {
-    position: relative;
+	position: relative;
 }
 
 .imageWrapper img {
-    display: block;
+	display: block;
 }
 
 .imageWrapper .insideText {
-    opacity: 0;
-    position: absolute;
-    bottom: 73px;
-    left: 8px;
-    right: 8px;
-    line-height: 0.5;
-    padding: 10px 0px;
-    color: #ffffff;
-    background: #66D698;
-    text-decoration: none;
-    text-align: center;
-    -webkit-transition: opacity 500ms;
-    -moz-transition: opacity 500ms;
-    -o-transition: opacity 500ms;
-    transition: opacity 500ms;
+	opacity: 0;
+	position: absolute;
+	bottom: 73px;
+	left: 8px;
+	right: 8px;
+	line-height: 0.5;
+	padding: 10px 0px;
+	color: #ffffff;
+	background: #66D698;
+	text-decoration: none;
+	text-align: center;
+	-webkit-transition: opacity 500ms;
+	-moz-transition: opacity 500ms;
+	-o-transition: opacity 500ms;
+	transition: opacity 500ms;
 }
 
 .imageWrapper:hover .insideText {
-    opacity: 0.8;
+	opacity: 0.8;
 }
 
 .rating {
-    color: #44A516;
-    padding: 0px 0px 0px 0px;
-    align-content: left;
+	color: #44A516;
+	padding: 0px 0px 0px 0px;
+	align-content: left;
 }
 
 .name {
-    padding: 0px 0px 0px 0px;
-    color: #0E4D81;
+	padding: 0px 0px 0px 0px;
+	color: #0E4D81;
 }
 
 .undertext {
-    padding: 1px 0px 0px 10px;
-    line-height: 0.5;
+	padding: 1px 0px 0px 10px;
+	line-height: 0.5;
 }
 
 .navbar {
-    padding: 10px;
+	padding: 10px;
 }
 
 .main {
-    margin-top: 70px;
-    margin-bottom: 20px;
+	margin-top: 70px;
+	margin-bottom: 20px;
 }
 
 .welcome {
-    min-height: 600px;
-    background: url('/images/homepage.jpg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    text-align: center;
-    padding-top: 150px;
+	min-height: 600px;
+	background: url('/images/homepage.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	text-align: center;
+	padding-top: 150px;
 }
 
 .search-place {
-    display: inline-block;
-    padding: 4px 0;
-    background-color: white;
-    border-radius: 5px;
-    width: 500px;
+	display: inline-block;
+	padding: 4px 0;
+	background-color: white;
+	border-radius: 5px;
+	width: 500px;
 }
 
 .search-icon {
-    width: 32px;
-    height: 32px;
-    float: left;
-    margin: 10px 8px 0 8px;
+	width: 32px;
+	height: 32px;
+	float: left;
+	margin: 10px 8px 0 8px;
 }
 
 .input-search-place {
-    border: none;
-    font-size: 24px;
-    overflow: hidden;
-    padding: 7px;
-    flex: 2;
-    width: 425px;
-    margin-right: 12px;
+	border: none;
+	font-size: 24px;
+	overflow: hidden;
+	padding: 7px;
+	flex: 2;
+	width: 425px;
+	margin-right: 12px;
 }
 
 .input-search-place:focus {
-    outline: none;
+	outline: none;
 }
 
 .welcome-text {
-    color: white;
-    font-weight: 600;
-    font-size: 45px;
+	color: white;
+	font-weight: 600;
+	font-size: 45px;
 }
 
 .description-type {
-    padding-top: 12px;
-    font-size: 20px;
+	padding-top: 12px;
+	font-size: 20px;
 }
 
 .location-name {
-    font-weight: 600;
-    font-size: 20px;
-    text-align: left;
+	font-weight: 600;
+	font-size: 20px;
+	text-align: left;
 }
 .location-address {
-    text-align: right;
+	text-align: right;
 }
 .navbar-brand {
-    font-weight: 600;
+	font-weight: 600;
 }
 
 .addlocation {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    margin: auto;
-    width: 65%;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+	margin: auto;
+	width: 65%;
 }
 .inputForm, select {
-    width: 100%;
-    padding: 10px 12px;
-    margin: 4px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+	width: 100%;
+	padding: 10px 12px;
+	margin: 4px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
   }
 .inputnumber {
 	padding: 10px 12px;
@@ -159,7 +159,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #45a049;
+	background-color: #45a049;
 }
 
 .addlocation {
@@ -196,6 +196,28 @@ label {
 }
 
 .about-title {
-    padding-top: 30px;
-    padding-bottom: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.tag:hover {
+  text-decoration: none;
+}
+
+.tag:active {
+  text-decoration: none;
+}
+
+.image-wrapper {
+	overflow: hidden;
+	width: 300px!important;
+	height: 300px!important;
+	position: relative;
+}
+
+.location-image {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
 }

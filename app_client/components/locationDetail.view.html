@@ -9,14 +9,14 @@
   </div>
   <div class="w3-row-padding">
     <div class="w3-padding-small">
-      <a href="" ng-repeat="keyword in vm.data.keywords">
+      <a class="tag" href="" ng-repeat="keyword in vm.data.keywords">
         <span class="w3-tag w3-teal"> {{keyword}} </span>
       </a>
     </div>
   </div>
   <div class="w3-row-padding">
-    <div class="w3-padding-small w3-third">
-      <img src="http://lorempixel.com/300/300/" class="w3-round w3-image">
+    <div class="image-wrapper w3-padding-small w3-third">
+      <img src= {{vm.data.imageLink}} class="w3-round location-image">
     </div>
     <div class="w3-padding-small w3-twothird">
       <div class="w3-row">
