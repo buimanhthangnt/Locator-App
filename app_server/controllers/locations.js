@@ -50,7 +50,7 @@ module.exports.locationList = function (req, res) {
 		})
 		.catch(err => {
 			console.error(err);
-			sendJsonResponse(res, 400, {err: true, msg: 'Fail'});
+			sendJsonResponse(res, 400, {err: true, msg: "" + err});
 		});
 }
 
@@ -89,7 +89,7 @@ module.exports.addLocation = function (req, res) {
 		})
 		.catch(err => {
 			console.error(err);
-			sendJsonResponse(res, 400, {err: true, msg: err});
+			sendJsonResponse(res, 400, {err: true, msg: "" + err});
 		});
 }
 
@@ -126,6 +126,6 @@ module.exports.locationsReadOne = function (req, res) {
 		})
 		.catch(err => {
 			console.error(err);
-			sendJsonResponse(res, 400, {err: true, msg: 'Fail'});
+			sendJsonResponse(res, 400, {err: true, msg: "" + err});
 		});
 }
