@@ -221,3 +221,52 @@ label {
 	top: 0;
 	height: 100%;
 }
+
+.signup-form {
+	margin: auto;
+	width: 500px;
+	border: 2px solid #ccc;
+	border-radius: 7px;
+	background-image: url("https://image.freepik.com/free-vector/background-made-with-geometrical-shapes_1023-100.jpg");
+}
+
+.input-area {
+	padding: 7px 20px;
+}
+
+.authen-input {
+	width: 100%;
+	padding: 8px 20px;
+	margin: 5px 0;
+	display: inline-block;
+	border-radius: 5px;
+}
+
+/* The following style is used for dropdown menu */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 80px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 12px 16px;
+	z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown-name {
+	color: gray;
+	padding-top: 14px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+}
+/* End of dropdown menu */
