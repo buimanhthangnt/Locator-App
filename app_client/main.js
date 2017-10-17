@@ -34,6 +34,14 @@
 				templateUrl: 'components/aboutPage.view.html',
 				controller: '',
 			})
+			.when('/signup', {
+				templateUrl: 'components/signup.view.html',
+				controller: '',
+			})
+			.when('/login', {
+				templateUrl: 'components/login.view.html',
+				controller: '',
+			})
 			.otherwise({ redirectTo: '/' });
 		$locationProvider.html5Mode(true);
 	}

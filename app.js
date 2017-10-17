@@ -27,7 +27,9 @@ var client_public_files = [
   'app_client/components/location_types/dating.controller.js',
   'app_client/components/common/navigation.directive.js',
   'app_client/components/common/myfooter.directive.js',
-  'app_client/components/common/ratingStars.directive.js'
+  'app_client/components/common/ratingStars.directive.js',
+  'app_client/components/login.controller.js',
+  'app_client/components/signup.controller.js'
 ];
 var filesContent = client_public_files.map((file) => {
   return fs.readFileSync(file, 'utf8');

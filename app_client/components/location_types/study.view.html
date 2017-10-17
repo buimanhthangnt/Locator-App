@@ -10,7 +10,7 @@
 		<div class="col-md-4 col-sm-6" ng-repeat="location in locations">
 			<div class="thumbnail">
 				<a href="/location/{{ location.id }}">
-					<img src="images/study.jpg" alt="Lights" style="width:100%">
+					<img src={{location.imageLink}} alt="Lights" style="width: 330px!important;height: 200px!important;">
 					<div class="w3-container">
 						<div class="w3-row">
 							<div class="w3-twothird">
@@ -20,9 +20,6 @@
 							<div class="w3-third">
 									<h6 class="location-address">{{location.address}}</h6>
 								</div>
-							<!-- <div class="w3-third">
-								<p class="location-address">{{location.address}}</p>
-							</div> -->
 						</div>
 						<div class="w3-row">
 							<a ng-repeat="key in location.keywords">
