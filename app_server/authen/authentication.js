@@ -22,7 +22,8 @@ function generateJwt(email, name) {
 		email: email,
 		name: name,
 		exp: parseInt(expiry.getTime() / 1000)
-	}, process.env.JWT_SECRET);
+	// }, process.env.JWT_SECRET);
+	}, "thisIsHardcode");
 }
 
 module.exports.register = (req, res) => {

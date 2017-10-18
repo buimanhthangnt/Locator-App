@@ -2,22 +2,29 @@
 <navigation></navigation>
 <!-- !PAGE CONTENT! -->
 <div class="main container">
-  <h2 class="formTitle">Login to Locator App</h2>
+  <h2 class="formTitle">Register to Locator App</h2>
   <form class="signup-form" ng-submit="vm.onSubmit()">
       <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
+      <div class="input-area">
+        <label>Name</label><br>
+        <input class="authen-input" type="text" placeholder="Enter name" ng-model="vm.name" required><br>
+      </div>
       <div class="input-area">
         <label>Email</label><br>
         <input class="authen-input" type="email" placeholder="Enter email" ng-model="vm.email" required><br>
       </div>
+
       <div class="input-area">
         <label>Password</label><br>
-        <input class="authen-input" type="password" placeholder="Enter password" ng-model="vm.password" required><br>
+        <input class="authen-input" type="password" placeholder="Enter password" ng-model="vm.password1" required><br>
       </div>
+
       <div class="input-area">
-        <label><input type="checkbox"> Remember me<br></label>
+        <label>Re-enter your password</label><br>
+        <input class="authen-input" type="password" placeholder="Re-enter password" ng-model="vm.password2" required><br>
       </div>
       <div class="submit">
-          <input type="submit" value="Login" ng-click="vm.onSubmit()">
+          <input type="submit" value="Register" ng-click="vm.onSubmit()">
       </div>
   </form>
 </div>

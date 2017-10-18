@@ -34,13 +34,15 @@
 				templateUrl: 'components/aboutPage.view.html',
 				controller: '',
 			})
-			.when('/signup', {
-				templateUrl: 'components/signup.view.html',
-				controller: '',
+			.when('/register', {
+				templateUrl: 'components/register.view.html',
+				controller: 'registerCtrl',
+				controllerAs: 'vm'
 			})
 			.when('/login', {
 				templateUrl: 'components/login.view.html',
-				controller: '',
+				controller: 'loginCtrl',
+				controllerAs: 'vm'
 			})
 			.otherwise({ redirectTo: '/' });
 		$locationProvider.html5Mode(true);
