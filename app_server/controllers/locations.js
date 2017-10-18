@@ -1,9 +1,5 @@
 let db = require('../db');
-
-let sendJsonResponse = function (res, status, content) {
-	res.status(status);
-	res.json(content);
-};
+let services = require('../services');
 
 module.exports.locationList = function (req, res) {
 	let locations;
@@ -46,11 +42,11 @@ module.exports.locationList = function (req, res) {
 					}
 				}
 			});
-			sendJsonResponse(res, 200, {err: false, data: locations, msg: 'Success'});
+			services.sendJsonResponse(res, 200, {err: false, data: locations, msg: 'Success'});
 		})
 		.catch(err => {
 			console.error(err);
-			sendJsonResponse(res, 400, {err: true, msg: "" + err});
+			services.sendJsonResponse(res, 400, {err: true, msg: "" + err});
 		});
 }
 
@@ -85,11 +81,11 @@ module.exports.addLocation = function (req, res) {
 			return db.insert(sql, [values]);
 		})
 		.then(results => {
-			sendJsonResponse(res, 200, {err: false, msg: "Location has just added!"});
+			services.sendJsonResponse(res, 200, {err: false, msg: "Location has just added!"});
 		})
 		.catch(err => {
 			console.error(err);
-			sendJsonResponse(res, 400, {err: true, msg: "" + err});
+			services.sendJsonResponse(res, 400, {err: true, msg: "" + err});
 		});
 }
 
@@ -122,10 +118,10 @@ module.exports.locationsReadOne = function (req, res) {
 				opening_times.push(_opening_time);
 			})
 			location.opening_times = opening_times;
-			sendJsonResponse(res, 200, {err: false, data: location, msg: 'Success'});
+			services.sendJsonResponse(res, 200, {err: false, data: location, msg: 'Success'});
 		})
 		.catch(err => {
 			console.error(err);
-			sendJsonResponse(res, 400, {err: true, msg: "" + err});
+			services.sendJsonResponse(res, 400, {err: true, msg: "" + err});
 		});
 }

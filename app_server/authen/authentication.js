@@ -1,12 +1,8 @@
 let db = require('../db');
+let services = require('../services');
 const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 require('dotenv').load();
-
-var sendJsonResponse = function (res, status, content) {
-	res.status(status);
-	res.json(content);
-};
 
 function generateHash(password) {
 	let hash = {};
@@ -22,8 +18,7 @@ function generateJwt(email, name) {
 		email: email,
 		name: name,
 		exp: parseInt(expiry.getTime() / 1000)
-	// }, process.env.JWT_SECRET);
-	}, "thisIsHardcode");
+	}, process.env.JWT_SECRET);
 }
 
 module.exports.register = (req, res) => {
@@ -44,11 +39,11 @@ module.exports.register = (req, res) => {
 			} else throw new Error('Email existed already');
 		})
 		.then(results => {
-			sendJsonResponse(res, 200, { err: false, msg: "Successful registration!" });
+			services.sendJsonResponse(res, 200, { err: false, msg: "Successful registration!" });
 		})
 		.catch(err => {
 			console.error(err);
-			sendJsonResponse(res, 400, { err: true, msg: "" + err });
+			services.sendJsonResponse(res, 400, { err: true, msg: "" + err });
 		})
 }
 
@@ -56,7 +51,7 @@ module.exports.login = (req, res) => {
 	let email = req.body.email;
 	let password = req.body.password;
 	if (!email || !password) {
-		sendJsonResponse(res, 400, { err: true, msg: 'All fields required' });
+		services.sendJsonResponse(res, 400, { err: true, msg: 'All fields required' });
 		return;
 	}
 	db.connect()
@@ -70,10 +65,10 @@ module.exports.login = (req, res) => {
 			let hash = crypto.pbkdf2Sync(password, user.salt, 1000, 64).toString('hex');
 			if (user.password != hash) throw new Error('Incorrect password');
 			let token = generateJwt(email, password);
-			sendJsonResponse(res, 200, { err: false, msg: 'Login successfully', data: { jwt: token } });
+			services.sendJsonResponse(res, 200, { err: false, msg: 'Login successfully', data: { jwt: token } });
 		})
 		.catch(err => {
 			console.error(err);
-			sendJsonResponse(res, 400, { err: true, msg: "" + err });
+			services.sendJsonResponse(res, 400, { err: true, msg: "" + err });
 		})
 }

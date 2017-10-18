@@ -9,13 +9,8 @@ var uglifyJs = require('uglify-es');
 var fs = require('fs');
 
 var routeAPI = require('./app_server/routes/index');
-var users = require('./app_server/routes/users');
 
 var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'app_server', 'views'));
-app.set('view engine', 'jade');
 
 var client_public_files = [
   'app_client/main.js',
@@ -50,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'app_client', 'public')));
 app.use(express.static(path.join(__dirname, 'app_client')));
 
 app.use('/api', routeAPI);
-//app.use('/users', users);
+
 app.use(function(req, res) {
 	res.sendfile(path.join(__dirname, 'app_client', 'index.html'));
 });

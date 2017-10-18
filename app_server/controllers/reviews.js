@@ -1,6 +1,3 @@
-var sendJsonResponse = function(res, status, content) {
-  res.status(status);
-  res.json(content);
-};
+let services = require('../services');
 
 module.exports = function() {}

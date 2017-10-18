@@ -1,7 +1,26 @@
 let db = require('../db');
+let services = require('../services');
 
-let sendJsonResponse = (res, status, content) => {
-  res.status(status);
-  res.json(content);
+module.exports.usersReadOne = (req, res) => {
+    let payload = services.verifyJwt(req.get('jwt'));
+    if (!payload) {
+        services.responseUnauthorized(res);
+        return;
+    }
+    db.connect()
+      .then(() => {
+          let sql = `SELECT id, name, email FROM users WHERE email = "${payload.email}"`;
+          return db.select(sql);
+      })
+      .then(users => {
+          if (Array.isArray(users) && users.length == 1) {
+              services.sendJsonResponse(res, 200, {err: false, msg: 'Success', data: users[0]});
+          } else {
+              throw new Error('Bad request');
+          }
+      })
+      .catch(err => {
+          console.error(err);
+          services.sendJsonResponse(res, 400, {err: true, msg: '' + err});
+      })
 }
-
