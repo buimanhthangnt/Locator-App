@@ -28,7 +28,8 @@
         }).then((res) => {
           alert(res.data.msg);
         }, (err) => {
-          throw new Error(err);
+          vm.formError = err.data.msg;
+          console.log(err.data.msg);
         })
       };
     }
