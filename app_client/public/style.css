@@ -168,7 +168,8 @@ input[type=submit]:hover {
    background-color: #5CC283;
    padding: 40px;
    margin-top: 40px;
-   width: 800px;
+	 width: 800px;
+	 background-image: url("/images/background.png");
 }
 
 label {
@@ -238,9 +239,11 @@ label {
 .authen-input {
 	width: 100%;
 	padding: 8px 20px;
-	margin: 5px 0;
+	margin: 4px 0;
 	display: inline-block;
-	border-radius: 5px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
 
 /* The following style is used for dropdown menu */
