@@ -53,14 +53,9 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 .main {
-<<<<<<< HEAD
-	margin-top: 70px;
-	margin-bottom: 50px;
-=======
 	margin-top: 66px;
 	margin-bottom: 20px;
 	min-height: calc(100vh - 282px);
->>>>>>> 2dd3ab7ab0a0b3f6c83c675ba0c41a259a1144ff
 }
 
 .welcome {
@@ -173,7 +168,8 @@ input[type=submit]:hover {
    background-color: #5CC283;
    padding: 40px;
    margin-top: 40px;
-   width: 800px;
+	 width: 800px;
+	 background-image: url("/images/background.png");
 }
 
 label {
