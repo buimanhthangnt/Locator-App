@@ -1,0 +1,45 @@
+.navbar {
+	padding: 8px;
+}
+.navbar-brand {
+	font-weight: 600;
+}
+
+/* The following style is used for dropdown menu */
+.dropdown {
+	position: relative;
+	display: inline-block;
+	margin-top: 14px;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 80px;
+	z-index: 1;
+	padding-top: 22px;
+	box-shadow: 0 10px 8px -5px #eaeaea;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown-name {
+	color: gray;
+	cursor: pointer;
+	padding-top: 14px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+}
+.dropdown-item {
+	display: block;
+	padding: 12px 27px;
+	text-align: center;
+}
+.dropdown-item:hover {
+	text-decoration: none;
+	background-color: #e2e2e2;
+}

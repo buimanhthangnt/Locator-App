@@ -1,0 +1,21 @@
+.signup-form {
+	margin: auto;
+	width: 500px;
+	border: 2px solid #ccc;
+	border-radius: 7px;
+	background-image: url("https://image.freepik.com/free-vector/background-made-with-geometrical-shapes_1023-100.jpg");
+}
+
+.input-area {
+	padding: 7px 20px;
+}
+
+.authen-input {
+	width: 100%;
+	padding: 8px 20px;
+	margin: 4px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}

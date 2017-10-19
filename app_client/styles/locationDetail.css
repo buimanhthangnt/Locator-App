@@ -1,0 +1,13 @@
+.image-wrapper {
+	overflow: hidden;
+	width: 300px!important;
+	height: 300px!important;
+	position: relative;
+}
+
+.location-image {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+}

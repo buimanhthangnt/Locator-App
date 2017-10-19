@@ -1,0 +1,55 @@
+.addlocation {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+	margin: auto;
+	width: 65%;
+}
+.inputForm, select {
+	width: 100%;
+	padding: 10px 12px;
+	margin: 4px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+  }
+.inputnumber {
+	padding: 10px 12px;
+	margin: 4px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+input[type=submit] {
+	display: inline-block;
+  width: 30%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+	cursor: pointer;
+}
+
+.submit {
+	text-align: center;
+}
+
+input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+.addlocation {
+   border-radius: 5px;
+   background-color: #5CC283;
+   padding: 40px;
+   margin-top: 40px;
+	 width: 800px;
+	 background-image: url("/images/background.png");
+}
+.checkbox {
+	padding-left: 20px;
+}

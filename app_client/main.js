@@ -30,21 +30,23 @@
 				controller: 'locationDetailCtrl',
 				controllerAs: 'vm'
 			})
-			.when('/aboutUs', {
-				templateUrl: 'components/aboutPage.view.html',
-				controller: '',
+			.when('/about', {
+				templateUrl: 'components/common/aboutPage.view.html'
 			})
 			.when('/register', {
-				templateUrl: 'components/register.view.html',
+				templateUrl: 'components/auth/register.view.html',
 				controller: 'registerCtrl',
 				controllerAs: 'vm'
 			})
 			.when('/login', {
-				templateUrl: 'components/login.view.html',
+				templateUrl: 'components/auth/login.view.html',
 				controller: 'loginCtrl',
 				controllerAs: 'vm'
 			})
-			.otherwise({ redirectTo: '/' });
+			.when('/notfound', {
+				templateUrl: 'components/common/notfound.view.html'
+			})
+			.otherwise({ redirectTo: '/notfound' });
 		$locationProvider.html5Mode(true);
 	}
 
