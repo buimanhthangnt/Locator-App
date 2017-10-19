@@ -7,11 +7,11 @@
       <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
       <div class="input-area">
         <label>Name</label><br>
-        <input class="authen-input" type="text" placeholder="Enter name" ng-model="vm.name" required><br>
+        <input class="authen-input" type="text" placeholder="Enter name" ng-model="vm.credentials.name" required><br>
       </div>
       <div class="input-area">
         <label>Email</label><br>
-        <input class="authen-input" type="email" placeholder="Enter email" ng-model="vm.email" required><br>
+        <input class="authen-input" type="email" placeholder="Enter email" ng-model="vm.credentials.email" required><br>
       </div>
 
       <div class="input-area">

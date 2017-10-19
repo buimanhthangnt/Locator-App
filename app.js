@@ -24,7 +24,8 @@ var client_public_files = [
   'app_client/components/common/myfooter.directive.js',
   'app_client/components/common/ratingStars.directive.js',
   'app_client/components/login.controller.js',
-  'app_client/components/register.controller.js'
+  'app_client/components/register.controller.js',
+  'app_client/services/authentication.service.js'
 ];
 var filesContent = client_public_files.map((file) => {
   return fs.readFileSync(file, 'utf8');

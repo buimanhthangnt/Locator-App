@@ -3,16 +3,20 @@
     .module('locator_app')
     .controller('loginCtrl', loginCtrl);
 
-    loginCtrl.$inject = ['$location', '$http'];
+    loginCtrl.$inject = ['$location', '$http', 'authentication'];
 
-    function loginCtrl($location, $http){
+    function loginCtrl($location, $http, authentication){
       var vm = this;
+      vm.credentials = {
+        email: '',
+        password: ''
+      };
 
       vm.returnPage = $location.search().page || '/';
 
       vm.onSubmit = function () {
         vm.formError = "";
-        if (!vm.email || !vm.password) {
+        if (!vm.credentials.email || !vm.credentials.password) {
           vm.formError = "All fields required, please try again!";
           return;
         } else {
@@ -22,15 +26,14 @@
 
       vm.doLogin = function() {
         vm.formError = "";
-        $http.post('/api/login', {
-          email: vm.email,
-          password: vm.password
-        }).then((res) => {
-          alert(res.data.msg);
-        }, (err) => {
-          vm.formError = err.data.msg;
-          console.log(err.data.msg);
-        })
+        authentication
+          .login(vm.credentials)
+          // .error(function(err) {
+          //   vm.formError = err;
+          // })
+          .then(function(){
+            
+          });
       };
     }
 })();
