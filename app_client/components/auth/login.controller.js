@@ -28,12 +28,12 @@
         vm.formError = "";
         authentication
           .login(vm.credentials)
-          // .error(function(err) {
-          //   vm.formError = err;
-          // })
-          .then(function(){
-            
-          });
+          .then((res) => {
+            authentication.saveToken(res.data.data.jwt);
+            $location.path(vm.returnPage);
+          }, (err) => {
+            vm.formError = err.data.msg;
+          })
       };
     }
 })();

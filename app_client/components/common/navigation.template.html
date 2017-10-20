@@ -25,8 +25,17 @@
         <li><a href="/addlocation">Add Location</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li ng-hide="navvm.isLoggedIn"><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li ng-hide="navvm.isLoggedIn"><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li ng-show="navvm.isLoggedIn">
+          <div class="dropdown">
+            <span class="dropdown-name">{{navvm.currentUser.name}}</span>
+            <div class="dropdown-content">
+                <a class="dropdown-item" href="locations/type/study">Change Infomation</a>
+                <a class="dropdown-item" href="" ng-click="navvm.logout()">Logout</a>
+            </div>
+          </div>
+      </li>
       </ul>
     </div>
   </div>

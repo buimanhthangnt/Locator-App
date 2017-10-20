@@ -14,7 +14,7 @@
         password : ""
       };
 
-      vm.returnPage = $location.search().page || '/';
+      vm.returnPage = $location.search().page || '/login';
 
       vm.onSubmit = function () {
         vm.formError = "";
@@ -34,12 +34,12 @@
         vm.formError = "";
         authentication
           .register(vm.credentials)
-          // .error(function(err) {
-          //   vm.formError = err;
-          // })
-          .then(function(){
-            
-          });
+          .then((res) => {
+            alert("Register successful!");
+            $location.path(vm.returnPage);
+          }, (err) => {
+            vm.formError = err.data.msg;
+          })
       };
     }
 })();

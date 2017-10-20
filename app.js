@@ -23,6 +23,7 @@ var client_public_files = [
   'app_client/components/common/navigation.directive.js',
   'app_client/components/common/myfooter.directive.js',
   'app_client/components/common/ratingStars.directive.js',
+  'app_client/components/common/navigation.controller.js',
   'app_client/components/auth/login.controller.js',
   'app_client/components/auth/register.controller.js',
   'app_client/services/authentication.service.js'

@@ -11,20 +11,11 @@
       var getToken = function() {
         return $window.localStorage['locator_app-token'];
       };
-      var register = function(user) {
-        return $http.post('/api/register', user).then((res) => {
-          saveToken(res);
-        }, (err) => {
-          console.log(err.data.msg);
-        })
+      var register = function(user, handleError) {
+        return $http.post('/api/register', user);
       };
-      var login = function(user) {
-        return $http.post('/api/login', user).then((res) => {
-          saveToken(res.data.data.jwt);
-          console.log(res);
-        }, (err) => {
-          console.log(err.data.msg);
-        })
+      var login = function(user, handleError) {
+        return $http.post('/api/login', user);
       };
       var logout = function() {
         $window.localStorage.removeItem('locator_app-token');
