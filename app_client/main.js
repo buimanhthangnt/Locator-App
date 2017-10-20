@@ -13,17 +13,9 @@
 				controller: 'addLocationCtrl',
 				controllerAs: 'vm'
 			})
-			.when('/locations/type/study', {
-				templateUrl: 'components/location_types/study.view.html',
-				controller: 'studyCtrl',
-			})
-			.when('/locations/type/work', {
-				templateUrl: 'components/location_types/work.view.html',
-				controller: 'workCtrl',
-			})
-			.when('/locations/type/dating', {
-				templateUrl: 'components/location_types/dating.view.html',
-				controller: 'datingCtrl',
+			.when('/locations/type/:type', {
+				templateUrl: 'components/location_types/locationType.view.html',
+				controller: 'locationTypeCtrl',
 			})
 			.when('/location/:locationid', {
 				templateUrl: 'components/locationDetail.view.html',

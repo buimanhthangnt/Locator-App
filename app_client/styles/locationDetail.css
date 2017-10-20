@@ -4,10 +4,17 @@
 	height: 300px!important;
 	position: relative;
 }
-
 .location-image {
 	position: absolute;
 	left: 0;
 	top: 0;
 	height: 100%;
+}
+.name-location-detail {
+	font-weight: 600;
+	margin-top: 15px;
+	margin-bottom: 2px;
+}
+.opening_time {
+	padding: 4px 0;
 }

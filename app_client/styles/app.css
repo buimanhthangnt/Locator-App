@@ -8,24 +8,21 @@
 body, h1, h2, h3, h4, h5, h6 {
 	font-family: "Raleway", sans-serif
 }
-
-.rating {
-	color: #44A516;
-	padding: 0px 0px 0px 0px;
-	align-content: left;
-}
-
 .name {
 	padding: 0px 0px 0px 0px;
 	color: #0E4D81;
 }
-
 .main {
 	margin-top: 66px;
-	margin-bottom: 20px;
-	min-height: calc(100vh - 282px);
+	padding-bottom: 20px;
+	min-height: calc(100vh - 262px);
 }
-
+.light-grey-background {
+	background-color: #efefef;
+}
+.white-background {
+	background-color: white;
+}
 label {
   font-weight: bold;
   font-family: Calibri;
@@ -33,7 +30,6 @@ label {
   text-align: left;
   line-height: 100%;
 }
-
 .formTitle {
   text-align: center;
   font-weight: bold;
@@ -42,20 +38,13 @@ label {
   font-weight: 900;
   line-height: 150%;
 }
-
 .form-group {
   align-content: center;
 }
-
 .about-title {
 	padding-top: 30px;
 	padding-bottom: 30px;
 }
-
-.tag:hover {
-  text-decoration: none;
-}
-
-.tag:active {
-  text-decoration: none;
+.anchor-no-underline:hover {
+	text-decoration: none;
 }

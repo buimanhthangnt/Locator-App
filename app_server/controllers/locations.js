@@ -53,7 +53,7 @@ module.exports.locationList = function (req, res) {
 module.exports.addLocation = function (req, res) {
 	db.connect()
 		.then(() => {
-			let sql = "INSERT INTO locations (name, type, address, rating, longitude, latitude, discount, imageLink) VALUES ?"
+			let sql = "INSERT INTO locations (name, type, address, rating, longitude, latitude, discount, avatar) VALUES ?"
 			let values = [];
 			for (let prop in req.body) {
 				if (prop == 'keywords' || prop == 'openingTimes') continue;

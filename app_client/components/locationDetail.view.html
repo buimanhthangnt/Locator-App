@@ -2,62 +2,53 @@
 <navigation></navigation>
 <!-- !PAGE CONTENT! -->
 <div class="main container" ng-controller="locationDetailCtrl">
-  <div class="w3-row-padding">
-    <h2 class="w3-padding-small" style="margin-bottom:-20px; text-decoration-line:underline;">{{ vm.data.name }}</h2><br>
-    <p class="w3-padding-small" style="margin-bottom:0px">{{ vm.data.address }}</p>
-    <p class="rating w3-padding-small" rating-stars rating="vm.data.rating"></p>
-  </div>
-  <div class="w3-row-padding">
-    <div class="w3-padding-small">
-      <a class="tag" href="" ng-repeat="keyword in vm.data.keywords">
+    <div>
+        <h2 class="name-location-detail">{{ vm.data.name }}</h2>
+        <p class="rating" rating-stars rating="vm.data.rating"></p>
+        <p>{{ vm.data.address }}</p>
+    </div>
+    <div style="margin-bottom: 20px">
+        <a class="anchor-no-underline" ng-repeat="keyword in vm.data.keywords">
         <span class="w3-tag w3-teal"> {{keyword}} </span>
       </a>
     </div>
-  </div>
-  <div class="w3-row-padding">
-    <div class="image-wrapper w3-padding-small w3-third">
-      <img src= {{vm.data.imageLink}} class="w3-round location-image">
-    </div>
-    <div class="w3-padding-small w3-twothird">
-      <div class="w3-row">
-        <div class="w3-half w3-padding-small">
-          <div class="w3-card-4" style="width:100%;">
-            <header class="w3-container w3-blue">
-              <h5>Opening Hours</h5>
-            </header>
-            <div class="w3-container">
-              <p>Hour</p>
+    <div>
+        <div class="image-wrapper w3-padding-small w3-third">
+            <img src={{vm.data.avatar}} class="location-image">
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="w3-card-4">
+                        <header class="w3-container w3-blue">
+                            <h5>Opening Hours</h5>
+                        </header>
+                        <div class="w3-container" style="padding: 8px 12px 8px 12px">
+                            <div class="opening_time" ng-repeat="ot in vm.data.opening_times">
+                                <span style="font-weight: 600">{{ot.day + ": "}}</span>
+                                <span ng-if="ot.state == true">
+                                    <span>{{ot.open + " - "}}</span>
+                                    <span>{{ot.close}}</span>
+                                </span>
+                                <span ng-if="ot.state == false">closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="w3-half w3-padding-small">
-          <div class="w3-card-4" style="width:100%;">
-            <header class="w3-container w3-blue">
-              <h5>Keywords</h5>
-            </header>
-            <div class="w3-container">
-              <p>Some keywords</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-  <br>
-  <div class="reviewArea">
-    <div class="col-xs-12">
-      <div class="panel panel-primary review-panel">
-        <div class="panel-heading">
-          <a class="btn btn-default pull-right">Login to add review</a>
-          <h2 class="panel-title">Customer reviews</h2>
-        </div>
-        <div class="panel-body review-container">
-          <div class="row">
+    <br>
+    <div class="reviewArea">
+        <div class="panel panel-primary review-panel">
+            <div class="panel-heading">
+                <a class="btn btn-default pull-right">Login to add review</a>
+                <h2 class="panel-title">Customer reviews</h2>
+            </div>
+            <div class="panel-body review-container">
 
-          </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
 <myfooter></myfooter>

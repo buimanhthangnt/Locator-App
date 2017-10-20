@@ -2,7 +2,33 @@
 	font-weight: 600;
 	font-size: 20px;
 	text-align: left;
+	max-width: 90%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin: 0;
+	padding-bottom: 2px;
+}
+.rating {
+	color: #44A516;
+	padding: 0px 0px 0px 0px;
+	align-content: left;
+	margin: 0;
 }
 .location-address {
-	text-align: right;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin: 0 0 12px 0;
+}
+.location-description {
+	padding: 12px;
+}
+.name-rating {
+	display: flex;
+}
+.tag-keywords {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
