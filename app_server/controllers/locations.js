@@ -125,10 +125,3 @@ module.exports.locationsReadOne = function (req, res) {
 			services.sendJsonResponse(res, 400, {err: true, msg: "" + err});
 		});
 }
-
-module.exports.addReview = function (req, res) {
-	db.connect()
-	.then(() => {
-
-	});
-}

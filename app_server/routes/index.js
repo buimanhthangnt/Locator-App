@@ -19,5 +19,5 @@ router.post('/login', authen.login);
 router.get('/users/info', ctrlUsers.usersReadOne);
 
 //reviews
-router.post('locations/:locationid/reviews', ctrlLocations.addReview);
+router.post('locations/:locationid/reviews', ctrlReviews.addReview);
 module.exports = router;
