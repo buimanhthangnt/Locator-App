@@ -3,8 +3,8 @@
     .module('locator_app')
     .service('authentication', authentication);
 
-    authentication.$inject = ['$http', '$window'];
-    function authentication ($http, $window) {
+    authentication.$inject = ['$http', '$window', '$route'];
+    function authentication ($http, $window, $route) {
       var saveToken = function(token) {
         $window.localStorage['locator_app-token'] = token;
       };
@@ -19,10 +19,11 @@
       };
       var logout = function() {
         $window.localStorage.removeItem('locator_app-token');
+        $route.reload();
       };
       var isLoggedIn = function() {
         var token = getToken();
-
+        
         if (token) {
           var payload = JSON.parse($window.atob(token.split('.')[1]));
           return payload.exp > Date.now() / 1000;
