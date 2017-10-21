@@ -64,7 +64,7 @@ module.exports.login = (req, res) => {
 			let user = users[0];
 			let hash = crypto.pbkdf2Sync(password, user.salt, 1000, 64).toString('hex');
 			if (user.password != hash) throw new Error('Incorrect password');
-			let token = generateJwt(email, password);
+			let token = generateJwt(email, user.name);
 			services.sendJsonResponse(res, 200, { err: false, msg: 'Login successfully', data: { jwt: token } });
 		})
 		.catch(err => {
