@@ -11,14 +11,14 @@ module.exports.usersReadOne = (req, res) => {
           })
           .then(users => {
               if (Array.isArray(users) && users.length == 1) {
-                  services.sendJsonResponse(res, 200, {err: false, msg: 'Success', data: users[0]});
+                  services.sendSuccessResponse(res, users[0]);
               } else {
                   throw new Error('Bad request');
               }
           })
           .catch(err => {
               console.error(err);
-              services.sendJsonResponse(res, 400, {err: true, msg: '' + err});
+              services.sendFailResponse(res, err);
           })
     }
     services.authorize(res, userJwt, next);

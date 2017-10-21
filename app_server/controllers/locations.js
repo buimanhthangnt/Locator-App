@@ -42,11 +42,11 @@ module.exports.locationList = function (req, res) {
 					}
 				}
 			});
-			services.sendJsonResponse(res, 200, {err: false, data: locations, msg: 'Success'});
+			services.sendSuccessResponse(res, locations);
 		})
 		.catch(err => {
 			console.error(err);
-			services.sendJsonResponse(res, 400, {err: true, msg: "" + err});
+			services.sendFailResponse(res, err);
 		});
 }
 
@@ -81,11 +81,11 @@ module.exports.addLocation = function (req, res) {
 			return db.insert(sql, [values]);
 		})
 		.then(results => {
-			services.sendJsonResponse(res, 200, {err: false, msg: "Location has just added!"});
+			services.sendSuccessResponse(res, null);
 		})
 		.catch(err => {
 			console.error(err);
-			services.sendJsonResponse(res, 400, {err: true, msg: "" + err});
+			services.sendFailResponse(res, err);
 		});
 }
 
@@ -118,10 +118,28 @@ module.exports.locationsReadOne = function (req, res) {
 				opening_times.push(_opening_time);
 			})
 			location.opening_times = opening_times;
-			services.sendJsonResponse(res, 200, {err: false, data: location, msg: 'Success'});
+			services.sendSuccessResponse(res, location);
 		})
 		.catch(err => {
 			console.error(err);
-			services.sendJsonResponse(res, 400, {err: true, msg: "" + err});
+			services.sendFailResponse(res, err);
 		});
+}
+
+module.exports.locationsByTag = (req, res) => {
+	let tagname = req.params.tagname;
+	tagname = tagname.charAt(0).toUpperCase() + tagname.slice(1);
+	db.connect()
+		.then(() => {
+			let sql1 = `(SELECT DISTINCT location_id AS id FROM keywords WHERE keyword = "${tagname}")`;
+			let sql2 = `SELECT * FROM locations WHERE id IN ${sql1}`;
+			return db.select(sql2);
+		})
+		.then(locations => {
+			if (locations.length == 0) throw new Error('Can not find keyword');
+			services.sendSuccessResponse(res, locations);
+		})
+		.catch(err => {
+			services.sendFailResponse(res, err);
+		})
 }

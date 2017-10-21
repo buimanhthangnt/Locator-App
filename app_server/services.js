@@ -26,3 +26,13 @@ module.exports.sendJsonResponse = (res, status, content) => {
   res.status(status);
   res.json(content);
 }
+
+module.exports.sendFailResponse = (res, err) => {
+  res.status(400);
+  res.json({err: true, msg: '' + err});
+}
+
+module.exports.sendSuccessResponse = (res, data) => {
+    res.status(200);
+    res.json({err: false, msg: 'Success', data: data});
+}

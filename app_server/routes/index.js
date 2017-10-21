@@ -10,6 +10,7 @@ var ctrlUsers = require('../controllers/users');
 router.get('/locations/type/:type', ctrlLocations.locationList);
 router.post('/locations/addlocation', ctrlLocations.addLocation);
 router.get('/locations/:locationid', ctrlLocations.locationsReadOne);
+router.get('/locations/tag/:tagname', ctrlLocations.locationsByTag);
 
 //authentication
 router.post('/register', authen.register);

@@ -23,10 +23,10 @@
 			let keywords = [];
 			if (vm.formData.checkboxFood) keywords.push('Food');
 			if (vm.formData.checkboxSilence) keywords.push('Silence');
-			if (vm.formData.checkboxWifi) keywords.push('Premium Wifi');
+			if (vm.formData.checkboxWifi) keywords.push('Wifi');
 			if (vm.formData.checkboxOutdoor) keywords.push('Outdoor');
 			if (vm.formData.checkboxDrink) keywords.push('Drinks');
-			if (vm.formData.checkboxGaming) keywords.push('Gaming Room');
+			if (vm.formData.checkboxGaming) keywords.push('Game');
 			if (vm.formData.checkboxOvernight) keywords.push('Overnight');
 			if (vm.formData.checkboxPower) keywords.push('Power');
 			if (keywords.length == 0) {
