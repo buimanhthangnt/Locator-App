@@ -11,10 +11,11 @@ function generateHash(password) {
 	return hash;
 }
 
-function generateJwt(email, name) {
+function generateJwt(id, email, name) {
 	var expiry = new Date();
 	expiry.setDate(expiry.getDate() + 7);
 	return jwt.sign({
+		id: id,
 		email: email,
 		name: name,
 		exp: parseInt(expiry.getTime() / 1000)
@@ -64,7 +65,7 @@ module.exports.login = (req, res) => {
 			let user = users[0];
 			let hash = crypto.pbkdf2Sync(password, user.salt, 1000, 64).toString('hex');
 			if (user.password != hash) throw new Error('Incorrect password');
-			let token = generateJwt(email, user.name);
+			let token = generateJwt(user.id, email, user.name);
 			services.sendJsonResponse(res, 200, { err: false, msg: 'Login successfully', data: { jwt: token } });
 		})
 		.catch(err => {

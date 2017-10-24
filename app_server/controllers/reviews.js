@@ -6,6 +6,7 @@ require('dotenv').load();
 module.exports.addReview = function (req, res) {
 	let location_id = req.params.locationid;
 	let userJwt = req.get('jwt');
+	let id;
 	let getUserId = (userJwt) => {
 		let payload;
 		jwt.verify(userJwt, process.env.JWT_SECRET, (err, decoded) => {
@@ -14,21 +15,18 @@ module.exports.addReview = function (req, res) {
 		db.connect()
 		.then(() => {
 				let sql = `SELECT id, name, email FROM users WHERE email = "${payload.email}"`;
-				return db.select(sql)[0].data.id;
+				return db.select(sql);
 		})
 		.then(users => {
-			if (Array.isArray(users) && users.length == 1) {
-					services.sendSuccessResponse(res, users[0]);
-			} else {
-					throw new Error('Bad request');
-			}
+			id = users[0].id;
+
 		})
 		.catch(err => {
 				console.error(err);
 				services.sendFailResponse(res, err);
 		})
 	};
-	let user_id = getUserId(userJwt);
+	let user_id = id;
 	db.connect()
 	.then(() => {
 		let created_time = Date.now();
