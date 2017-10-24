@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const crypto = require('crypto');
 require('dotenv').load();
 
 //need to check expired date
@@ -10,14 +11,30 @@ let verifyJwt = (reqToken) => {
     return payload;
 }
 
-module.exports.authorize = (res, jwt, next) => {
+module.exports.authorize = (jwt) => {
     let payload = verifyJwt(jwt);
-    if (!payload) {
-        res.status(401);
-        res.json({err: true, msg: 'Unauthorized'});
-    } else {
-        next(payload);
-    }
+    return new Promise((resolve, reject) => {
+        if (!payload) return reject('Unauthorized');
+        else return resolve(payload);
+    });
+}
+
+module.exports.generateHash = (password) => {
+	let hash = {};
+	hash.salt = crypto.randomBytes(16).toString('hex');
+	hash.password = crypto.pbkdf2Sync(password, hash.salt, 1000, 64).toString('hex');
+	return hash;
+}
+
+module.exports.generateJwt = (id, email, name) => {
+	var expiry = new Date();
+	expiry.setDate(expiry.getDate() + 7);
+	return jwt.sign({
+		id: id,
+		email: email,
+		name: name,
+		exp: parseInt(expiry.getTime() / 1000)
+	}, process.env.JWT_SECRET);
 }
 
 module.exports.verifyJwt;
