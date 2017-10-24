@@ -35,6 +35,11 @@
 				controller: 'loginCtrl',
 				controllerAs: 'vm'
 			})
+			.when('/users/info', {
+				templateUrl: 'components/userInfo.view.html',
+				controller: 'userInfoCtrl',
+				controllerAs: 'vm'
+			})
 			.when('/notfound', {
 				templateUrl: 'components/common/notfound.view.html'
 			})
