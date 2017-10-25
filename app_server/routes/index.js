@@ -20,5 +20,5 @@ router.post('/login', authen.login);
 router.get('/users/info', ctrlUsers.usersReadOne);
 router.put('/users/update', ctrlUsers.usersUpdateOne);
 //reviews
-router.post('locations/:locationid/reviews', ctrlReviews.addReview);
+router.post('/locations/:locationid/reviews/add', ctrlReviews.addReview);
 module.exports = router;
