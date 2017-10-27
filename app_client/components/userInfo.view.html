@@ -1,16 +1,28 @@
 <!-- Sidebar/menu -->
 <navigation></navigation>
 <!-- !PAGE CONTENT! -->
-<div class="container main" ng-controller="userInfoCtrl">
+<div class="container main" ng-controller="userInfoCtrl" ng-model="vm">
   <h2 class="formTitle">Your Personal Information</h2>
   <form class="signup-form">
-      <div class="input-area">
+      <div class="input-area" ng-show="!vm.isEdit">
         <label>Name</label><br>
-        <input class="authen-input" value="{{vm.userInfo.name}}" required><br>
+        <input class="authen-input" value="{{vm.userInfo.name}}" ng-disabled="!vm.isEdit" required><br>
       </div>
-      <div class="input-area">
+      <div class="input-area" ng-show="!vm.isEdit">
         <label>Email</label><br>
-        <input class="authen-input" value="{{vm.userInfo.email}}"  required><br>
+        <input class="authen-input" value="{{vm.userInfo.email}}" ng-disabled="!vm.isEdit" required><br>
+      </div>
+      <div class="input-area" ng-show="vm.isEdit">
+        <label>Name</label><br>
+        <input class="authen-input" ng-model="" ng-disabled="!vm.isEdit" required><br>
+      </div>
+      <div class="input-area" ng-show="vm.isEdit">
+        <label>Email</label><br>
+        <input class="authen-input" ng-model="" ng-disabled="!vm.isEdit" required><br>
+      </div>
+      <div class="submit">
+        <input ng-hide="vm.isEdit" type="submit" value="EDIT" ng-click="vm.isEditing()">
+        <input ng-show="vm.isEdit" type="submit" value="UPDATE" ng-click="vm.isEditing()">
       </div>
   </form>
 </div>
