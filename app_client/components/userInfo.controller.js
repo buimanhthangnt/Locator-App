@@ -27,7 +27,6 @@
       });
 
     vm.isEditing = function () {
-      console.log(vm.isEdit);
       if (vm.editPassword) {
         if (!vm.info.password_1 || !vm.info.password_2) {
           vm.formError = "All fields required!";
