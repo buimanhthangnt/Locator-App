@@ -3,17 +3,27 @@
   userInfoCtrl.$inject = ['$http', '$window', 'authentication'];
 
   function userInfoCtrl($http, $window, authentication) {
-    let vm = this;
+    var vm = this;
+    vm.isEdit = false;
     let config = {headers: {
       jwt: $window.localStorage['locator_app-token']
-    }
-  };
+      }
+    };
     $http.get('/api/users/info', config)
       .then(function success(response) {
         vm.userInfo = response.data.data;
-        console.log(vm.userInfo.name);
       }, function error(err) {
         console.log(err);
       });
-  }
+    vm.isEditing = function () {
+      vm.isEdit = !vm.isEdit;
+      console.log(vm.isEdit);
+      return vm.isEdit;
+    };
+
+    // vm.credentials.editing = {
+    //   name: '',
+    //   email: ''
+    // };
+  }  
 })();
