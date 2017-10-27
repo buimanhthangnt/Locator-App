@@ -32,3 +32,35 @@ module.exports.addReview = function (req, res) {
 			services.sendJsonResponse(res, 400, {err: true, msg: "" + err});
 		});
 }
+
+module.exports.reviewDeleteOne = function(req, res) {
+	let review_id = res.params.reviewid;
+	services.authorize(req.get('jwt'))
+		.then((payload) => {
+			let user_id = payload.id;
+			db.connect()
+				.then(() => {
+					let sql = `SELECT * from comments WHERE id = "${review_id}"`;
+					return db.select(sql);
+				})
+				.then(comments => {
+					if (!Array.isArray(comments) || comments.length == 0) throw new Error('Find no comment!')
+					else if (comments[0].user_id == user_id) {
+						let sql = `DELETE * from comments WHERE id = "${review_id}"`;
+						return db.select(sql);
+					}
+					else throw new Error('Authentication error!')
+				})
+				.then(results => {
+					services.sendSuccessResponse(res, null);
+				})
+				.catch(err => {
+					console.error(err);
+					services.sendFailResponse(res, err);
+				});
+		})
+		.catch(err => {
+			console.error(err);
+			services.sendJsonResponse(res, 400, {err: true, msg: "" + err});
+		});
+}
