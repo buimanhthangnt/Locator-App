@@ -48,8 +48,16 @@ module.exports.usersUpdateOne = (req, res) => {
             console.log(hash.salt);
             db.connect()
                 .then(() => {
-                    let sql = `UPDATE users SET name = "${newName}", email = "${newEmail}", password = "${hash.password}", salt = "${hash.salt}" WHERE id = "${user_id}"`;
-                    return db.insert(sql);
+                    if (!newName || !newEmail || !newPassword) throw new Error('All fields required');
+                    let sql = `SELECT * from users WHERE email = "${newEmail}"`;
+                    return db.select(sql);
+                })
+                .then(users => {
+                    if (Array.isArray(users) && users.length == 1) {
+                        let sql = `UPDATE users SET name = "${newName}", email = "${newEmail}", password = "${hash.password}", salt = "${hash.salt}" WHERE id = "${user_id}"`;
+                        return db.insert(sql);
+                    }
+                    else throw new Error('Email existed already');
                 })
                 .then(results => {
                     services.sendSuccessResponse(res, null);

@@ -21,4 +21,5 @@ router.get('/users/info', ctrlUsers.usersReadOne);
 router.put('/users/update', ctrlUsers.usersUpdateOne);
 //reviews
 router.post('/locations/:locationid/reviews/add', ctrlReviews.addReview);
+router.delete('/reviews/:reviewid/delete', ctrlReviews.reviewDeleteOne);
 module.exports = router;
