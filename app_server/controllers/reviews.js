@@ -34,19 +34,19 @@ module.exports.addReview = function (req, res) {
 }
 
 module.exports.reviewDeleteOne = function(req, res) {
-	let review_id = res.params.reviewid;
+	let review_id = req.params.reviewid;
 	services.authorize(req.get('jwt'))
 		.then((payload) => {
 			let user_id = payload.id;
 			db.connect()
 				.then(() => {
-					let sql = `SELECT * from comments WHERE id = "${review_id}"`;
+					let sql = `SELECT * FROM comments WHERE id = "${review_id}"`;
 					return db.select(sql);
 				})
 				.then(comments => {
 					if (!Array.isArray(comments) || comments.length == 0) throw new Error('Find no comment!')
 					else if (comments[0].user_id == user_id) {
-						let sql = `DELETE * from comments WHERE id = "${review_id}"`;
+						let sql = `DELETE FROM comments WHERE id = "${review_id}"`;
 						return db.select(sql);
 					}
 					else throw new Error('Authentication error!')
