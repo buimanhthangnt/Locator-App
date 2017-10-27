@@ -48,3 +48,6 @@ label {
 .anchor-no-underline:hover {
 	text-decoration: none;
 }
+textarea {
+	resize: none;
+}

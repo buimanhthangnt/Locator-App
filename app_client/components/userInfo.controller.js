@@ -1,6 +1,6 @@
 (function() {
-  angular.module('locator_app').controller('userInfoCtrl', userInfoCtrl)
-  userInfoCtrl.$inject = ['$http', '$window', 'authentication'];
+    angular.module('locator_app').controller('userInfoCtrl', userInfoCtrl)
+    userInfoCtrl.$inject = ['$http', '$window', 'authentication'];
 
   function userInfoCtrl($http, $window, authentication) {
     var vm = this;

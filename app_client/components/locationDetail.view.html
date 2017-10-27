@@ -12,28 +12,22 @@
         <span class="w3-tag w3-teal"> {{keyword}} </span>
       </a>
     </div>
-    <div>
-        <div class="image-wrapper w3-padding-small w3-third">
+    <div style="display: flex">
+        <div class="image-wrapper">
             <img src={{vm.data.avatar}} class="location-image">
         </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="w3-card-4">
-                        <header class="w3-container w3-blue">
-                            <h5>Opening Hours</h5>
-                        </header>
-                        <div class="w3-container" style="padding: 8px 12px 8px 12px">
-                            <div class="opening_time" ng-repeat="ot in vm.data.opening_times">
-                                <span style="font-weight: 600">{{ot.day + ": "}}</span>
-                                <span ng-if="ot.state == true">
-                                    <span>{{ot.open + " - "}}</span>
-                                    <span>{{ot.close}}</span>
-                                </span>
-                                <span ng-if="ot.state == false">closed</span>
-                            </div>
-                        </div>
-                    </div>
+        <div class="w3-card-4 opening-times">
+            <header class="w3-container w3-blue">
+                <h5>Opening Hours</h5>
+            </header>
+            <div class="w3-container" style="padding: 8px 12px 8px 12px">
+                <div class="opening_time" ng-repeat="ot in vm.data.opening_times">
+                    <span style="font-weight: 600">{{ot.day + ": "}}</span>
+                    <span ng-if="ot.state == true">
+                        <span>{{ot.open + " - "}}</span>
+                    <span>{{ot.close}}</span>
+                    </span>
+                    <span ng-if="ot.state == false">closed</span>
                 </div>
             </div>
         </div>
@@ -42,13 +36,63 @@
     <div class="reviewArea">
         <div class="panel panel-primary review-panel">
             <div class="panel-heading">
-                <a class="btn btn-default pull-right">Login to add review</a>
+                <a ng-hide="vm.isLoggedIn" class="btn btn-default pull-right">Login to add review</a>
+                <a ng-show="vm.isLoggedIn" data-toggle="modal" data-target="#reviewModal" ng-click="vm.showModal()" class="btn btn-default pull-right">Add review</a>
                 <h2 class="panel-title">Customer reviews</h2>
             </div>
             <div class="panel-body review-container">
-
+                <div class="row">
+					<div ng-repeat="review in vm.reviews">
+						<div class="review">
+                            <span class="reviewAuthor">{{ review.name }}</span>
+							<span class="rating" rating-stars rating="review.rating"></span>
+							<small class="reviewTimestamp">{{ review.created_time | date : 'd MMMM yyyy' }}</small>
+                            <p class="p-no-margin">{{ review.content }}</p>
+						</div>
+					</div>
+				</div>
             </div>
         </div>
     </div>
 </div>
+
+<div id="reviewModal" data-backdrop="static" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="color: #44A516">Add review for {{vm.data.name}}</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" class="form-horizontal">
+                    <div class="modal-body">
+                        <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
+                        <div class="form-group">
+                            <label for="rating" class="col-xs-10 col-sm-2 control-label">Rating</label>
+                            <div class="col-xs-12 col-sm-2">
+                                <select ng-model="vm.formData.rating" class="form-control input-sm">
+              						<option>5</option>
+              						<option>4</option>
+              						<option>3</option>
+              						<option>2</option>
+              						<option>1</option>
+              					</select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="review" class="col-sm-2 control-label">Review</label>
+                            <div class="col-sm-10">
+                                <textarea id="review" name="review" rows="5" required="required" ng-model="vm.formData.reviewText" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button ng-click="vm.addReview()" type="button" class="btn btn-success">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <myfooter></myfooter>

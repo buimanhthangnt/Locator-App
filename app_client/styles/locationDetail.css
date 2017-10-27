@@ -3,6 +3,11 @@
 	width: 300px!important;
 	height: 300px!important;
 	position: relative;
+	margin-right: 24px;
+}
+.opening-times {
+	width: 400px;
+	height: 200px;
 }
 .location-image {
 	position: absolute;
@@ -17,4 +22,21 @@
 }
 .opening_time {
 	padding: 4px 0;
+}
+.reviewAuthor {
+	font-weight: 600;
+	margin-right: 8px;
+}
+.reviewTimestamp {
+	float: right;
+}
+.review {
+	padding: 8px 15px;
+	border-bottom: 1px solid #bcbcbc;
+}
+.p-no-margin {
+	margin: 0;
+}
+.review-container {
+	padding: 0 15px;
 }
