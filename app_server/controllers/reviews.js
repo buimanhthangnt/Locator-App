@@ -25,10 +25,27 @@ module.exports.addReview = function (req, res) {
 			return db.insert(sql, [[values]]);
 		})
 		.then(results => {
-			services.sendJsonResponse(res, 200, {err: false, msg: "Review added!"});
+			services.sendJsonResponse(res, 200, {err: false, msg: "Review added!", data: results});
 		})
 		.catch(err => {
 			console.error(err);
 			services.sendJsonResponse(res, 400, {err: true, msg: "" + err});
 		});
+}
+
+module.exports.reviewsByLocationId = (req, res) => {
+	let locationid = req.params.locationid;
+	db.connect()
+		.then(() => {
+			let sql = `SELECT comments.id, users.name, rating, content, created_time, user_id FROM comments
+			JOIN users ON comments.user_id = users.id WHERE location_id = "${locationid}"`;
+			return db.select(sql);
+		})
+		.then(reviews => {
+			services.sendSuccessResponse(res, reviews);
+		})
+		.catch(err => {
+			console.error(err);
+			services.sendFailResponse(res, err);
+		})
 }
