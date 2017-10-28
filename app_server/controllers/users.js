@@ -44,20 +44,25 @@ module.exports.usersUpdateOne = (req, res) => {
             let newName = req.body['name'];
             let newEmail = req.body['email'];
             let newPassword = req.body['password'];
-            let hash = services.generateHash(newPassword);
-            console.log(hash.salt);
             db.connect()
                 .then(() => {
-                    if (!newName || !newEmail || !newPassword) throw new Error('All fields required');
+                    if (!newName || !newEmail) throw new Error('All fields required');
                     let sql = `SELECT * from users WHERE email = "${newEmail}"`;
                     return db.select(sql);
                 })
                 .then(users => {
-                    if (Array.isArray(users) && users.length == 1) {
+                    if (users.length >= 1 && newEmail != payload.email) {
+                        throw new Error('Email existed already');
+                    }
+                    else if (req.body['password'] != undefined) {
+                        let hash = services.generateHash(newPassword);
                         let sql = `UPDATE users SET name = "${newName}", email = "${newEmail}", password = "${hash.password}", salt = "${hash.salt}" WHERE id = "${user_id}"`;
                         return db.insert(sql);
                     }
-                    else throw new Error('Email existed already');
+                    else if (req.body['password'] == undefined) {
+                        let sql = `UPDATE users SET name = "${newName}", email = "${newEmail}" WHERE id = "${user_id}"`;
+                        return db.insert(sql);
+                    }
                 })
                 .then(results => {
                     services.sendSuccessResponse(res, null);
