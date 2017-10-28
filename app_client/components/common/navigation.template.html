@@ -30,8 +30,8 @@
         <li ng-show="navvm.isLoggedIn">
           <div class="dropdown">
             <span class="dropdown-name"><span class="glyphicon glyphicon-user"></span> {{navvm.currentUser.name}}</span>
-            <div class="dropdown-content">
-                <a class="dropdown-item" href="/users/info"><span class="glyphicon glyphicon-user"></span> Your Profile</a>              
+            <div class="dropdown-content user-dropdown">
+                <a class="dropdown-item" href="/users/info"><span class="glyphicon glyphicon-user"></span> Your Profile</a>
                 <a class="dropdown-item" href="" ng-click="navvm.logout()"><span class="glyphicon glyphicon-off"></span> Logout</a>
             </div>
           </div>
