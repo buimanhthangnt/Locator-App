@@ -56,6 +56,7 @@
               <span class="rating" rating-stars rating="review.rating"></span>
               <small class="reviewTimestamp">{{ comment.created_time | date : 'd MMMM yyyy' }}</small>
               <p class="p-no-margin">{{ comment.content }}</p>
+              <button ng-click="vm.deleteComment(comment.id)">Delete</button>
             </div>
         </div>
       </div>

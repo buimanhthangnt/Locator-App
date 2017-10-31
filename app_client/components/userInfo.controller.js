@@ -1,8 +1,8 @@
 (function() {
     angular.module('locator_app').controller('userInfoCtrl', userInfoCtrl)
-    userInfoCtrl.$inject = ['$http', '$window', 'authentication'];
+    userInfoCtrl.$inject = ['$http', '$window', 'authentication', '$route'];
 
-  function userInfoCtrl($http, $window, authentication) {
+  function userInfoCtrl($http, $window, authentication, $route) {
     var vm = this;
     vm.isEdit = false;
     vm.editPassword = false;
@@ -61,6 +61,16 @@
     vm.editingPassword = function () {
       vm.editPassword = !vm.editPassword;
       return vm.editPassword;
+    };
+
+    vm.deleteComment = function (reviewid) {
+      $http.delete('/api/reviews/' + reviewid + '/delete', config)
+      .then((res) => {
+        alert(res.data.msg);
+        $route.reload();
+      }, (err) => {
+        alert(err.data.msg);
+      })
     };
   }  
 })();

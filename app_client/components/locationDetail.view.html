@@ -36,7 +36,7 @@
     <div class="reviewArea">
         <div class="panel panel-primary review-panel">
             <div class="panel-heading">
-                <a ng-hide="vm.isLoggedIn" class="btn btn-default pull-right">Login to add review</a>
+                <a ng-hide="vm.isLoggedIn" class="btn btn-default pull-right" href="/login/?page={{ navvm.currentPath }}">Login to add review</a>
                 <a ng-show="vm.isLoggedIn" data-toggle="modal" data-target="#reviewModal" ng-click="vm.showModal()" class="btn btn-default pull-right">Add review</a>
                 <h2 class="panel-title">Customer reviews</h2>
             </div>
