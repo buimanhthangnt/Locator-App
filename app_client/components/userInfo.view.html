@@ -4,31 +4,61 @@
 <div class="container main" ng-controller="userInfoCtrl">
   <h2 class="formTitle">Your Personal Information</h2>
   <form class="signup-form" novalidate>
-      <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
-      <div class="input-area">
-        <label>Name</label><br>
-        <input class="authen-input" ng-model="vm.info.name" ng-disabled="!vm.isEdit" required><br>
-      </div>
-      <div class="input-area">
-        <label>Email</label><br>
-        <input class="authen-input" ng-model="vm.info.email" ng-disabled="!vm.isEdit" required><br>
-      </div>
+    <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
+    <div class="input-area">
+      <label>Name</label>
+      <br>
+      <input class="authen-input" ng-model="vm.info.name" ng-disabled="!vm.isEdit" required>
+      <br>
+    </div>
+    <div class="input-area">
+      <label>Email</label>
+      <br>
+      <input class="authen-input" ng-model="vm.info.email" ng-disabled="!vm.isEdit" required>
+      <br>
+    </div>
 
-      <!-- Editing password -->
-      <div class="input-area" ng-show="vm.isEdit" ng-click="vm.editingPassword()">
-        <label><input type="checkbox"> Change Password</label>
-      </div>
-      <div class="input-area" ng-show="vm.editPassword">
-        <label>New Password</label><br>
-        <input type="password" class="authen-input" ng-model="vm.info.password_1" ng-disabled="!vm.isEdit" placeholder="New Password" required><br>
-      </div>
-      <div class="input-area" ng-show="vm.editPassword">
-        <label>Retype New Password</label><br>
-        <input type="password" class="authen-input" ng-model="vm.info.password_2" ng-disabled="!vm.isEdit" placeholder="Retype New Password" required><br>
-      </div>
-      <div class="submit">
-        <input ng-hide="vm.isEdit" type="submit" value="EDIT" ng-click="vm.isEditing()">
-        <input ng-show="vm.isEdit" type="submit" value="UPDATE" ng-click="vm.isEditing()">
-      </div>
+    <!-- Editing password -->
+    <div class="input-area" ng-show="vm.isEdit">
+      <label>
+        <input type="checkbox" ng-click="vm.editingPassword()"> Change Password</label>
+    </div>
+    <div class="input-area" ng-show="vm.editPassword">
+      <label>New Password</label>
+      <br>
+      <input type="password" class="authen-input" ng-model="vm.info.password_1" ng-disabled="!vm.isEdit" placeholder="New Password"
+        required>
+      <br>
+    </div>
+    <div class="input-area" ng-show="vm.editPassword">
+      <label>Retype New Password</label>
+      <br>
+      <input type="password" class="authen-input" ng-model="vm.info.password_2" ng-disabled="!vm.isEdit" placeholder="Retype New Password"
+        required>
+      <br>
+    </div>
+    <div class="submit">
+      <input ng-hide="vm.isEdit" type="submit" value="EDIT" ng-click="vm.isEditing()">
+      <input ng-show="vm.isEdit" type="submit" value="UPDATE" ng-click="vm.isEditing()">
+    </div>
   </form>
+  <!-- Reviews of current user -->
+  <br>
+  
+  <div class="reviewArea">
+    <div class="panel panel-primary review-panel" ng-repeat="comment in vm.info.comments">
+      <div class="panel-heading">
+        <h2 class="panel-title">Your review on <a class="anchor-no-underline" href="/location/{{comment.location_id}}"><b>{{comment.name}}</b></a></h2>
+      </div>
+      <div class="panel-body review-container">
+        <div class="row">
+            <div class="review">
+              <span class="rating" rating-stars rating="review.rating"></span>
+              <small class="reviewTimestamp">{{ comment.created_time | date : 'd MMMM yyyy' }}</small>
+              <p class="p-no-margin">{{ comment.content }}</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

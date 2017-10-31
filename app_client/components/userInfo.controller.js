@@ -22,6 +22,7 @@
         vm.userInfo = response.data.data;
         vm.info.name = vm.userInfo.name;
         vm.info.email = vm.userInfo.email;
+        vm.info.comments = vm.userInfo.comments;
       }, function error(err) {
         console.log(err);
       });

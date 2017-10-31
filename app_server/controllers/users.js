@@ -15,7 +15,7 @@ module.exports.usersReadOne = (req, res) => {
                   if (!Array.isArray(users) && users.length != 1) throw new Error("No user found!");
                   user = users[0];
                   let id = user.id;
-                  let sql = `SELECT * FROM comments WHERE user_id="${id}"`;
+                  let sql = `SELECT locations.name, comments.id, comments.location_id, comments.rating, content, created_time FROM comments JOIN locations ON comments.location_id = locations.id WHERE user_id="${id}"`;
                   return db.select(sql);
               })
               .then(_comments => {
