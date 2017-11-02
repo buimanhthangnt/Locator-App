@@ -1,5 +1,12 @@
 (function () {
-	angular.module('locator_app', ['ngRoute']);
+	angular.module('locator_app', ['ngRoute', 'ui.bootstrap'])
+	.filter('startFrom', function() {
+		return function(data, start) {
+			if(!data || !data.length)
+				return;
+			return data.slice(start);
+		}
+	});
 
 	config.$inject = ['$routeProvider', '$locationProvider'];
 	function config($routeProvider, $locationProvider) {
@@ -46,7 +53,7 @@
 			.otherwise({ redirectTo: '/notfound' });
 		$locationProvider.html5Mode(true);
 	}
-
+	
 	angular
 		.module('locator_app')
 		.config(['$routeProvider', '$locationProvider', config]);

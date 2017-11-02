@@ -4,6 +4,7 @@
 		.controller('locationTypeCtrl', locationTypeCtrl);
 	locationTypeCtrl.$inject = ['$scope', '$http', '$routeParams'];
 	function locationTypeCtrl($scope, $http, $routeParams) {
+		$scope.pageSize = 3;
 		$scope.type = $routeParams.type;
 		var locationList = function () {
 			$http.get(`/api/locations/type/${$routeParams.type}`)
