@@ -40,6 +40,11 @@
 				controller: 'userInfoCtrl',
 				controllerAs: 'vm'
 			})
+			.when('/tags/:tag', {
+				templateUrl: 'components/locationByTag.view.html',
+				controller: 'locationByTag',
+				controllerAs: 'vm'
+			})
 			.when('/notfound', {
 				templateUrl: 'components/common/notfound.view.html'
 			})

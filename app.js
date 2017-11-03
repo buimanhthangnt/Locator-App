@@ -17,6 +17,7 @@ var client_public_files = [
   'app_client/components/home.controller.js',
   'app_client/components/addLocation.controller.js',
   'app_client/components/locationDetail.controller.js',
+  'app_client/components/locationByTag.controller.js',
   'app_client/components/location_types/locationType.controller.js',
   'app_client/components/common/navigation.directive.js',
   'app_client/components/common/myfooter.directive.js',

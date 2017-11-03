@@ -8,9 +8,9 @@
         <p>{{ vm.data.address }}</p>
     </div>
     <div style="margin-bottom: 20px">
-        <a class="anchor-no-underline" ng-repeat="keyword in vm.data.keywords">
-        <span class="w3-tag w3-teal"> {{keyword}} </span>
-      </a>
+        <span ng-repeat="keyword in vm.data.keywords">
+            <a href="/tags/{{keyword.toLowerCase()}}" class="anchor-no-underline w3-tag w3-teal"> {{keyword}} </a>
+        </span>
     </div>
     <div style="display: flex">
         <div class="image-wrapper">
