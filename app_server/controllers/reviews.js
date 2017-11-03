@@ -25,6 +25,12 @@ module.exports.addReview = function (req, res) {
 			return db.insert(sql, [[values]]);
 		})
 		.then(results => {
+			let sql = `SELECT AVG(rating) as avg FROM comments WHERE location_id = "${location_id}"`;
+			return db.select(sql);
+		})
+		.then(results => {
+			let sql = `UPDATE locations SET rating = "${results[0].avg}" WHERE id = "${location_id}"`
+			db.select(sql);
 			services.sendJsonResponse(res, 200, {err: false, msg: "Review added!", data: results});
 		})
 		.catch(err => {

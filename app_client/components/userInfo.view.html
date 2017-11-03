@@ -40,17 +40,19 @@
     <div class="submit">
       <input ng-hide="vm.isEdit" type="submit" value="EDIT" ng-click="vm.isEditing()">
       <input ng-show="vm.isEdit" type="submit" value="UPDATE" ng-click="vm.isEditing()">
+      <input ng-show="vm.isEdit" type="submit" value="CANCEL" ng-click="vm.isCancelEditing()">
     </div>
   </form>
+  
   <!-- Reviews of current user -->
   <br>
-  
   <div class="reviewArea">
-    <div class="panel panel-primary review-panel" ng-repeat="comment in vm.info.comments">
+    <div class="panel panel-primary review-panel">
       <div class="panel-heading">
-        <h2 class="panel-title">Your review on <a class="anchor-no-underline" href="/location/{{comment.location_id}}"><b>{{comment.name}}</b></a></h2>
+        <h2 class="panel-title w3-center"><b>YOUR ACTIVITIES</b></h2>
       </div>
-      <div class="panel-body review-container">
+      <div class="panel-body review-container" ng-repeat="comment in vm.info.comments">
+        <h2 class="panel-title">Your review on <a class="anchor-no-underline" href="/location/{{comment.location_id}}"><b>{{comment.name}}</b></a></h2>
         <div class="row">
             <div class="review">
               <span class="rating" rating-stars rating="review.rating"></span>

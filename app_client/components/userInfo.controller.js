@@ -26,6 +26,11 @@
       }, function error(err) {
         console.log(err);
       });
+    
+    vm.isCancelEditing = function () {
+      vm.isEdit = false;
+      vm.editPassword = false;
+    };
 
     vm.isEditing = function () {
       if (vm.editPassword) {
