@@ -1,0 +1,19 @@
+.location-description-in-tag {
+  display: inline-block;
+  height: 100px;
+  padding: 12px;
+  width: 65%;
+  margin-top: 5px;
+}
+.location-item-in-tag {
+  display: flex;
+  align-items: center;
+}
+.avatar-in-tag {
+  width: 140px;
+  height: 100px;
+  display: inline-block;
+}
+.title-in-tag {
+  padding: 16px;
+}

@@ -3,21 +3,24 @@
 <!-- !PAGE CONTENT! -->
 <div class="light-grey-background">
 	<div class="main container light-grey-background">
-		<h3 class="w3-padding">Places with <span style="background-color: #009688; border-radius: 4px; padding: 1px 8px 3px 8px">{{tag}}</span></h3>
+		<h3 class="title-in-tag">Places with <span style="background-color: #009688;
+			border-radius: 4px; padding: 1px 8px 3px 8px; color:white">{{tag}}</span></h3>
 		<div class="row">
-			<div class="col-md-4 col-sm-6" style="margin-bottom: 24px;" ng-repeat="location in locations">
+			<div class="col-md-6 col-sm-12" style="margin-bottom: 24px;" ng-repeat="location in locations">
 				<a class="anchor-no-underline" href="/location/{{ location.id }}">
-					<img src={{location.avatar}} style="width: 100%; height: 220px;">
-					<div class="location-description white-background">
-						<div class="w3-row">
-							<h5 class="location-name">{{location.name}}</h5>
-							<p class="rating" rating-stars rating="location.rating"></p>
-							<h6 class="location-address">{{location.address}}</h6>
-						</div>
-						<div class="w3-row tag-keywords">
-							<a class="anchor-no-underline" ng-repeat="key in location.keywords">
-								<span class="w3-tag w3-teal"> {{key}} </span>
-							</a>
+					<div class="location-item-in-tag">
+						<img src={{location.avatar}} class="avatar-in-tag">
+						<div class="location-description-in-tag white-background">
+							<div class="w3-row">
+								<h5 class="location-name">{{location.name}}</h5>
+								<p class="rating" rating-stars rating="location.rating"></p>
+								<h6 class="location-address">{{location.address}}</h6>
+							</div>
+							<div class="w3-row tag-keywords">
+								<a class="anchor-no-underline" ng-repeat="key in location.keywords">
+									<span class="w3-tag w3-teal"> {{key}} </span>
+								</a>
+							</div>
 						</div>
 					</div>
 				</a>
