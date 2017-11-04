@@ -1,8 +1,10 @@
 .signup-form {
 	margin: auto;
 	width: 500px;
-	border: 2px solid #ccc;
+	border: 1px solid #cecece;
+	padding: 24px 16px;
 	border-radius: 7px;
+	margin-top: 24px;
 	background-image: url("https://i.pinimg.com/736x/f5/cd/4a/f5cd4a81584af6f158f3b4e3ba4806e3--city-sketch-drawing-architecture.jpg");
 }
 

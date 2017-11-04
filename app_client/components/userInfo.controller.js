@@ -16,7 +16,7 @@
       jwt: $window.localStorage['locator_app-token']
       }
     };
-    
+
     $http.get('/api/users/info', config)
       .then(function success(response) {
         vm.userInfo = response.data.data;
@@ -26,7 +26,7 @@
       }, function error(err) {
         console.log(err);
       });
-    
+
     vm.isCancelEditing = function () {
       vm.isEdit = false;
       vm.editPassword = false;
@@ -45,11 +45,11 @@
       }
       if (vm.isEdit) {
         // put(url, data, [config]);
-        $http.put('/api/users/update', 
+        $http.put('/api/users/update',
         {
           name: vm.info.name,
           email: vm.info.email,
-          password: vm.info.password_1 
+          password: vm.info.password_1
         }, config)
         .then((res) => {
           alert(res.data.msg);
@@ -71,11 +71,14 @@
     vm.deleteComment = function (reviewid) {
       $http.delete('/api/reviews/' + reviewid + '/delete', config)
       .then((res) => {
-        alert(res.data.msg);
-        $route.reload();
+        let comments = vm.info.comments;
+        comments = comments.filter(comment => {
+          return comment.id != reviewid;
+        });
+        vm.info.comments = comments;
       }, (err) => {
         alert(err.data.msg);
       })
     };
-  }  
+  }
 })();
