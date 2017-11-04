@@ -6,6 +6,14 @@
 		<div class="w3-row-padding">
 			<h1 class="w3-center w3-padding">Pick a place to {{type}}</h1>
 		</div>
+		<div>
+			<h3>Found {{numberOfLocations}} locations to {{type}}</h3>
+		</div>
+		<div>
+			<h5>Viewing priority: </h5>
+			<button ng-click="sortByRating()">Highly rated</button>
+			<button ng-click="sortByDistance()">Distance</button>
+		</div>
 		<div class="row">
 
 			<div class="col-md-4 col-sm-6" style="margin-bottom: 24px;" ng-repeat="location in locations | startFrom:(currentPage - 1)*pageSize | limitTo: pageSize">
