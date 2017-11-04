@@ -3,7 +3,12 @@
 <!-- !PAGE CONTENT! -->
 <div class="main container" ng-controller="locationDetailCtrl">
     <div>
-        <h2 class="name-location-detail">{{ vm.data.name }}</h2>
+        <div style="display: flex; align-items: center">
+          <div class="name-location-detail">{{ vm.data.name }}
+
+          </div>
+          <span class="distance-badge-detail">{{(vm.data.distance) ? vm.data.distance : "..."}}</span>
+        </div>
         <p class="rating" rating-stars rating="vm.data.rating"></p>
         <p>{{ vm.data.address }}</p>
     </div>
@@ -16,11 +21,11 @@
         <div class="image-wrapper">
             <img src={{vm.data.avatar}} class="location-image">
         </div>
-        <div class="w3-card-4 opening-times">
-            <header class="w3-container w3-blue">
-                <h5>Opening Hours</h5>
-            </header>
-            <div class="w3-container" style="padding: 8px 12px 8px 12px">
+        <div class="panel panel-primary opening-times">
+            <div class="panel-heading">
+                <h2 class="panel-title">Opening Hours</h2>
+            </div>
+            <div class="panel-body map-detail" style="padding: 8px 12px 8px 12px">
                 <div class="opening_time" ng-repeat="ot in vm.data.opening_times">
                     <span style="font-weight: 600">{{ot.day + ": "}}</span>
                     <span ng-if="ot.state == true">
@@ -29,6 +34,14 @@
                     </span>
                     <span ng-if="ot.state == false">closed</span>
                 </div>
+            </div>
+        </div>
+        <div class="panel panel-primary" style="margin-left: 48px">
+            <div class="panel-heading">
+                <h2 class="panel-title">Location Map</h2>
+            </div>
+            <div class="panel-body map-detail">
+                <img src="https://maps.googleapis.com/maps/api/staticmap?center={{vm.data.latitude}},{{vm.data.longitude}}&amp;zoom=16&amp;size=320x264" />
             </div>
         </div>
     </div>
@@ -42,15 +55,15 @@
             </div>
             <div class="panel-body review-container">
                 <div class="row">
-					<div ng-repeat="review in vm.reviews">
-						<div class="review">
+                    <div ng-repeat="review in vm.reviews">
+                        <div class="review">
                             <span class="reviewAuthor">{{ review.name }}</span>
-							<span class="rating" rating-stars rating="review.rating"></span>
-							<small class="reviewTimestamp">{{ review.created_time | date : 'd MMMM yyyy' }}</small>
+                            <span class="rating" rating-stars rating="review.rating"></span>
+                            <small class="reviewTimestamp">{{ review.created_time | date : 'd MMMM yyyy' }}</small>
                             <p class="p-no-margin">{{ review.content }}</p>
-						</div>
-					</div>
-				</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -26,6 +26,7 @@ var client_public_files = [
   'app_client/components/auth/login.controller.js',
   'app_client/components/auth/register.controller.js',
   'app_client/services/authentication.service.js',
+  'app_client/services/geolocation.js',
   'app_client/components/userInfo.controller.js'
 ];
 var filesContent = client_public_files.map((file) => {

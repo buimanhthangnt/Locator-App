@@ -3,11 +3,12 @@
 	width: 300px!important;
 	height: 300px!important;
 	position: relative;
-	margin-right: 24px;
+	margin-right: 16px;
 }
 .opening-times {
-	width: 400px;
+	width: 300px;
 	height: 200px;
+	margin-right: 16px;
 }
 .location-image {
 	position: absolute;
@@ -17,8 +18,9 @@
 }
 .name-location-detail {
 	font-weight: 600;
-	margin-top: 15px;
+	padding-top: 12px;
 	margin-bottom: 2px;
+	font-size: 22px;
 }
 .opening_time {
 	padding: 4px 0;
@@ -39,4 +41,18 @@
 }
 .review-container {
 	padding: 0 15px;
+}
+.map-detail {
+	overflow: hidden;
+	padding: 0px;
+}
+.distance-badge-detail {
+	background-color: #607D8B;
+	border-radius: 5px;
+	padding: 3px 10px;
+	font-size: 15px;
+	color: white;
+	font-weight: 600;
+	margin-left: 16px;
+	margin-top: 10px;
 }

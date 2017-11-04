@@ -51,14 +51,20 @@
 				alert('All fields are required!');
 				return;
 			}
+			let long = parseFloat(form.longitude);
+			let lat = parseFloat(form.latitude);
+			if (isNaN(long) || isNaN(lat)) {
+				alert('Please enter valid longitude and latitude');
+				return;
+			}
 			$http.post('/api/locations/addlocation', {
 				name: form.name,
 				type: form.type,
 				keywords: keywords,
 				address: form.address,
 				rating: form.rating,
-				longitude: form.longitude,
-				latitude: form.latitude,
+				longitude: parseFloat(form.longitude),
+				latitude: parseFloat(form.latitude),
 				discount: form.discount,
 				imageLink: form.imageLink,
 				openingTimes: vm.openingTimes

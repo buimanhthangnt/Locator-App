@@ -1,12 +1,18 @@
 (function() {
     angular.module('locator_app').controller('locationDetailCtrl', locationDetailCtrl);
 
-    locationDetailCtrl.$inject = ['$routeParams', '$http', '$window', 'authentication'];
-    function locationDetailCtrl($routeParams, $http, $window, authentication) {
+    locationDetailCtrl.$inject = ['$routeParams', '$http', '$window', 'authentication', 'geolocation', '$timeout'];
+    function locationDetailCtrl($routeParams, $http, $window, authentication, geolocation, $timeout) {
         let vm = this;
         let id = $routeParams["locationid"];
         $http.get('/api/locations/' + id).then(function success(response) {
             vm.data = response.data.data;
+            let coords = [{long: vm.data.longitude, lat: vm.data.latitude}];
+            geolocation.getDistances(coords).then(distances => {
+              $timeout(() => {
+                vm.data.distance = distances[0];
+              }, 0);
+            })
         }, function error(err) {
             console.log(err);
         });

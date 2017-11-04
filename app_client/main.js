@@ -58,7 +58,7 @@
 			.otherwise({ redirectTo: '/notfound' });
 		$locationProvider.html5Mode(true);
 	}
-	
+
 	angular
 		.module('locator_app')
 		.config(['$routeProvider', '$locationProvider', config]);
