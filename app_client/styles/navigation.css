@@ -45,5 +45,6 @@
 }
 .user-dropdown{
 	width: 200px;
-	left: -45px;
+	left: 50%;
+	margin-left: -100px;
 }
