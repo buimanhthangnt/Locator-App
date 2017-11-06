@@ -8,14 +8,16 @@
 		</div>
 		<div>
 			<h3>Found {{numberOfLocations}} locations to {{type}}</h3>
+			<div class="dropdownForSorting">
+				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">SORT BY <span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<option class="dropdown-item" ng-click="sortByRating()">RATING</option>
+					<option class="dropdown-item" ng-click="sortByDistance()">DISTANCE</option>
+				</ul>
+			</div>
 		</div>
-		<div>
-			<h5>Viewing priority: </h5>
-			<button ng-click="sortByRating()">Highly rated</button>
-			<button ng-click="sortByDistance()">Distance</button>
-		</div>
+		<br>
 		<div class="row">
-
 			<div class="col-md-4 col-sm-6" style="margin-bottom: 24px;" ng-repeat="location in locations | startFrom:(currentPage - 1)*pageSize | limitTo: pageSize">
 				<a class="anchor-no-underline" href="/location/{{ location.id }}">
 					<div class="location-item">

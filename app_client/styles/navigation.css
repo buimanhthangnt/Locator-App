@@ -41,6 +41,7 @@
 	text-align: center;
 }
 .dropdown-item:hover {
+	cursor: pointer;
 	text-decoration: none;
 	background-color: #e2e2e2;
 }
