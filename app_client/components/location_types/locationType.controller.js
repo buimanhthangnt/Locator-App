@@ -7,7 +7,7 @@
         var locationList = function() {
             $http.get(`/api/locations/type/${$routeParams.type}`).then(function success(response) {
                 $scope.locations = response.data.data;
-                $scope.parseFloatOfLocations = $scope.locations.length;
+                $scope.numberOfLocations = $scope.locations.length;
 								let coords = [];
 								$scope.locations.forEach(location => {
 									coords.push({long: location.longitude, lat: location.latitude});
