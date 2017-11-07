@@ -1,8 +1,8 @@
 (function() {
     angular.module('locator_app').controller('userInfoCtrl', userInfoCtrl)
-    userInfoCtrl.$inject = ['$http', '$window', 'authentication', '$route'];
+    userInfoCtrl.$inject = ['$http', '$window', 'authentication', '$route', '$location'];
 
-  function userInfoCtrl($http, $window, authentication, $route) {
+  function userInfoCtrl($http, $window, authentication, $route, $location) {
     var vm = this;
     vm.isEdit = false;
     vm.editPassword = false;
@@ -55,6 +55,7 @@
           alert(res.data.msg);
           authentication.logout();
           alert("Please re-login to continue!");
+          $location.path('/login');
         }, (err) => {
           vm.formError = err.data.msg;
         });
