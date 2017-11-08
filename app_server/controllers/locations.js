@@ -7,7 +7,7 @@ module.exports.locationList = function (req, res) {
 		.then(() => {
 			let type = req.params.type;
 			if (type != 'study' && type != 'work' && type != 'dating') throw new Error("Not found");
-			let sql = `SELECT * FROM locations where type = "${type}"`;
+			let sql = `SELECT locations.*, count(comments.location_id) as numberOfComments FROM locations LEFT JOIN comments ON locations.id = comments.location_id where type = "${type}" group by locations.id`;
 			return db.select(sql);
 		})
 		.then(_locations => {

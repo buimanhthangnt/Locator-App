@@ -52,3 +52,8 @@
 	display: inline-block;
 	margin-top: -4px;
 }
+
+.numberOfComments {
+	float: right;
+	margin-top: 0px;
+}
