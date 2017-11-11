@@ -143,3 +143,19 @@ module.exports.locationsByTag = (req, res) => {
 			services.sendFailResponse(res, err);
 		})
 }
+
+module.exports.locationsByName = (req, res) => {
+	let name = req.query.name;
+	db.connect()
+		.then(() => {
+			let sql = `SELECT * FROM locations WHERE name LIKE "%${name}%" LIMIT 5`;
+			return db.select(sql);
+		})
+		.then(locations => {
+			services.sendSuccessResponse(res, locations);
+		})
+		.catch(err => {
+			services.sendFailResponse(res, err);
+			console.error(err);
+		})
+}

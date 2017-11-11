@@ -14,6 +14,7 @@
 			.when('/', {
 				templateUrl: 'components/home.view.html',
 				controller: 'homeCtrl',
+				controllerAs: 'vm'
 			})
 			.when('/addlocation', {
 				templateUrl: 'components/addLocation.view.html',

@@ -9,6 +9,7 @@ var ctrlUsers = require('../controllers/users');
 // locations
 router.get('/locations/type/:type', ctrlLocations.locationList);
 router.post('/locations/addlocation', ctrlLocations.addLocation);
+router.get('/locations/name', ctrlLocations.locationsByName);
 router.get('/locations/:locationid', ctrlLocations.locationsReadOne);
 router.get('/locations/tag/:tagname', ctrlLocations.locationsByTag);
 

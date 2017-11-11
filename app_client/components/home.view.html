@@ -5,7 +5,13 @@
         <h1 class="welcome-text">Find your place</h1><br/>
         <div class="search-place">
             <img src="images/search.png" class="search-icon" />
-            <input type="text" class="input-search-place" />
+            <input type="text" class="input-search-place" ng-change="vm.query()" ng-model="vm.searchText"/>
+            <div ng-repeat="location in vm.searchLocations">
+              <a href="{{ '/location/' + location.id }}" class="search-results anchor-no-underline">
+                <div class="search-result-name">{{ location.name }}</div>
+                <p class="rating" style="padding-right: 25px;" rating-stars rating="location.rating"></p>
+              </a>
+            </div>
         </div>
     </div>
 
