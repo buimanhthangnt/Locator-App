@@ -62,3 +62,6 @@ textarea {
 	border: 1px solid #F44336;
 	border-radius: 4px;
 }
+.white {
+	color: white !important;
+}

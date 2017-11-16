@@ -1,11 +1,36 @@
-<navigation></navigation>
+<nav class="navbar navbar-default custom-nav">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <span class="navbar-brand white custom-brand" href="#">Locator App</span>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/" class="white">Home</a></li>
+        <li><a href="/about" class="white">About</a></li>
+        <li ng-show="vm.isAdmin"><a href="/addlocation" class="white">Add Location</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-hide="vm.isLoggedIn"><a href="/register" class="white"><span class="glyphicon glyphicon-user white"></span> Sign Up</a></li>
+        <li ng-hide="vm.isLoggedIn"><a href="/login" class="white"><span class="white glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li ng-show="vm.isLoggedIn">
+            <a href="/users/info" class="white"><span class="glyphicon glyphicon-user"></span> {{vm.currentUser.name}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<div class="main light-grey-background">
+<div class="main light-grey-background" style="margin-top: 0; padding-bottom: 0">
     <div class="welcome">
         <h1 class="welcome-text">Find your place</h1><br/>
         <div class="search-place">
             <img src="images/search.png" class="search-icon" />
-            <input type="text" class="input-search-place" ng-change="vm.query()" ng-model="vm.searchText"/>
+            <input type="text" class="input-search-place" ng-change="vm.query()" ng-model="vm.searchText" placeholder="Search"/>
             <div ng-repeat="location in vm.searchLocations">
               <a href="{{ '/location/' + location.id }}" class="search-results anchor-no-underline">
                 <div class="search-result-name">{{ location.name }}</div>
@@ -13,38 +38,24 @@
               </a>
             </div>
         </div>
+        <div style="width: 100%; margin: 72px 26px 0 26px; display: flex; padding-right: 26px;" ng-hide="vm.searchText">
+          <div class="intro-item">
+            <a class="intro-text" href="locations/type/study">
+              <div class="intro-title">Study</div>Want a perfect place to focus and do your homework and self-learning?
+            </a>
+          </div>
+          <div class="intro-item">
+            <a class="intro-text" href="locations/type/work">
+              <div class="intro-title">Work</div>Or a place for your team to meet and discuss new ideas and plans?
+            </a>
+          </div>
+          <div class="intro-item">
+            <a class="intro-text" href="locations/type/dating">
+              <div class="intro-title">Dating</div>How about a wonderful place to meet "The One" and have wonderful time together?
+            </a>
+          </div>
+        </div>
     </div>
 
-    <!-- First Photo Grid-->
-    <h1 class="w3-center w3-padding">Pick a place for today</h1><br/>
-    <div class="w3-row-padding">
-        <div class="w3-third w3-container w3-margin-bottom">
-            <a class="anchor-no-underline" href="locations/type/study">
-                <img src="/images/study.jpg" style="width:100%" class="w3-hover-opacity">
-                <div class="w3-container w3-white">
-                  <p class="description-type"><b>Places for study</b></p>
-                  <p>You want a perfect place to focus and do your homework and self-learning?</p>
-                </div>
-            </a>
-        </div>
-        <div class="w3-third w3-container w3-margin-bottom">
-            <a class="anchor-no-underline" href="locations/type/work">
-                <img src="/images/work.jpg" style="width:100%" class="w3-hover-opacity">
-                <div class="w3-container w3-white">
-                  <p class="description-type"><b>Places for teamwork</b></p>
-                  <p>You want a perfect place for your team to meet and discuss new ideas and plans?</p>
-                </div>
-             </a>
-        </div>
-        <div class="w3-third w3-container">
-            <a class="anchor-no-underline" href="locations/type/dating">
-                <img src="/images/dating.jpg" style="width:100%" class="w3-hover-opacity">
-                <div class="w3-container w3-white">
-                  <p class="description-type"><b>Place for dating</b></p>
-                  <p>You want a perfect place to meet "The One" and have wonderful time together?</p>
-                </div>
-             </a>
-        </div>
-    </div>
 </div>
 <myfooter></myfooter>

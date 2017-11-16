@@ -27,7 +27,6 @@ function geolocation() {
                 lat1 = position.coords.latitude;
                 let distances = [];
                 coords.forEach(coord => {
-                  console.log(coord);
                     let distance = getDistanceFromLatLonInKm(lat1, long1, coord.lat, coord.long);
                     if (distance < 1) distance = Math.round(distance * 1000) + "m";
                     else distance = Math.round(distance * 10) / 10 + "km";
