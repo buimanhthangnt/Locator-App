@@ -31,14 +31,6 @@ label {
   text-align: left;
   line-height: 100%;
 }
-.formTitle {
-  text-align: center;
-  font-weight: bold;
-  font-family: "Lato","Helvetica Neue", Helvetica;
-  font-size: 30px;
-  font-weight: 900;
-  line-height: 150%;
-}
 .form-group {
   align-content: center;
 }
