@@ -22,7 +22,7 @@
             </div>
         </li>
         <li><a href="/about">About</a></li>
-        <li><a href="/addlocation">Add Location</a></li>
+        <li ng-show="navvm.isAdmin"><a href="/addlocation">Add Location</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li ng-hide="navvm.isLoggedIn"><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

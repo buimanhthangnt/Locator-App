@@ -12,6 +12,7 @@
     vm.isLoggedIn = authentication.isLoggedIn();
 
     vm.currentUser = authentication.currentUser();
+    vm.isAdmin = vm.currentUser.email == "admin@gmail.com";
 
     vm.logout = function() {
       authentication.logout();
