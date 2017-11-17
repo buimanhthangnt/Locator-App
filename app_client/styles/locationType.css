@@ -8,6 +8,7 @@
 	overflow: hidden;
 	margin: 0;
 	padding-bottom: 2px;
+	flex: 1;
 }
 .distance-badge {
 	background-color: #5C6BC0;
