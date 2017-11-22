@@ -1,14 +1,14 @@
 let mysql = require('mysql');
 
 let pool = null;
+pool = mysql.createPool({
+    host: '127.0.0.1',
+    user: 'root',
+    password: '',
+    database: 'locator_app'
+});
 
 exports.connect = function () {
-    pool = mysql.createPool({
-        host: '127.0.0.1',
-        user: 'root',
-        password: '',
-        database: 'locator_app'
-    });
     return new Promise((resolve, reject) => {
         resolve();
     });
