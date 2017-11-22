@@ -51,7 +51,8 @@
 .dropdownForSorting {
 	position: relative;
 	display: inline-block;
-	margin-top: -4px;
+	margin-top: 10px;
+	float: right;
 }
 
 .numberOfComments {

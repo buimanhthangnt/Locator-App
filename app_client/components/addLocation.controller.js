@@ -1,9 +1,15 @@
 (function () {
 	angular.module('locator_app').controller('addLocationCtrl', addLocationCtrl);
 
-	addLocationCtrl.$inject = ['$http'];
-	function addLocationCtrl($http) {
+	addLocationCtrl.$inject = ['$http', 'authentication', '$location'];
+	function addLocationCtrl($http, authentication, $location) {
 		let vm = this;
+		vm.currentUser = authentication.currentUser();
+		if (!(vm.currentUser.id >= 11 && vm.currentUser.id <= 12)) {
+			alert("You don't have permission to add locations");
+			$location.path('/');
+			return;
+		}
 		vm.openingTimes = [];
 		vm.pushDefaultOpeningTime = () => {
 			vm.openingTimes.push({
