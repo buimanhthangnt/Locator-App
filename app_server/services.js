@@ -22,7 +22,7 @@ module.exports.authorize = (jwt) => {
 module.exports.generateHash = (password) => {
 	let hash = {};
 	hash.salt = crypto.randomBytes(16).toString('hex');
-	hash.password = crypto.pbkdf2Sync(password, hash.salt, 1000, 64).toString('hex');
+	hash.password = crypto.pbkdf2Sync(password, hash.salt, 1000, 64, 'sha512').toString('hex');
 	return hash;
 }
 

@@ -43,7 +43,7 @@ module.exports.login = (req, res) => {
 		.then(users => {
 			if (!users || users.length == 0) throw new Error('Incorrect email');
 			let user = users[0];
-			let hash = crypto.pbkdf2Sync(password, user.salt, 1000, 64).toString('hex');
+			let hash = crypto.pbkdf2Sync(password, user.salt, 1000, 64, 'sha512').toString('hex');
 			if (user.password != hash) throw new Error('Incorrect password');
 			let token = services.generateJwt(user.id, email, user.name);
 			services.sendJsonResponse(res, 200, { err: false, msg: 'Login successfully', data: { jwt: token } });
