@@ -4,7 +4,7 @@ let pool = null;
 pool = mysql.createPool({
     host: '127.0.0.1',
     user: 'root',
-    password: '',
+    password: 'hihi',
     database: 'locator_app'
 });
 
