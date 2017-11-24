@@ -7,6 +7,12 @@
         let id = $routeParams["locationid"];
         $http.get('/api/locations/' + id).then(function success(response) {
             vm.data = response.data.data;
+            let googleapi = `https://maps.googleapis.com/maps/api/staticmap?center=${vm.data.latitude},${vm.data.longitude}&zoom=16&size=320x264`;
+            $http.get(googleapi).then(res => {
+                $timeout (() => {
+                    vm.map = googleapi;
+                }, 0);
+            });            
             let coords = [{long: vm.data.longitude, lat: vm.data.latitude}];
             geolocation.getDistances(coords).then(distances => {
               $timeout(() => {
