@@ -44,12 +44,16 @@ input[type=submit]:hover {
 
 .addlocation {
    border-radius: 5px;
-   background-color: #5CC283;
+   background-color: white;
    padding: 40px;
    margin-top: 40px;
 	 width: 800px;
-	 background-image: url("/images/background.png");
+	 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+	 background-image: url("/images/auth.png");
 }
 .checkbox {
 	padding-left: 20px;
+}
+.addlocation-wrapper {
+	background-color: #ecedef;
 }
