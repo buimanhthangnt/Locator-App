@@ -12,7 +12,7 @@
     vm.isAdmin = vm.currentUser.email == "admin@gmail.com";
 		vm.searchLocations = [];
 		vm.query = function () {
-			if (vm.searchText || vm.searchText == "") {
+			if (!vm.searchText || vm.searchText == "") {
 				vm.searchLocations = [];
 				return;
 			}
