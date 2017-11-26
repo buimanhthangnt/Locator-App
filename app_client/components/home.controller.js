@@ -20,6 +20,7 @@
 				.then(res => {
 					vm.searchLocations = res.data.data;
 				}, err => {
+					vm.searchLocations = [];
 					console.log(err);
 				});
 		}
