@@ -27,7 +27,7 @@
 						vm.searchLocations = [];
 						console.log(err);
 					});
-			}, 800);
+			}, 500);
 		}
 	}
 })();
