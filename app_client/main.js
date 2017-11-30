@@ -53,6 +53,9 @@
 				controller: 'locationByTag',
 				controllerAs: 'vm'
 			})
+			.when('/alert', {
+				templateUrl: 'components/common/alert.view.html'
+			})
 			.when('/notfound', {
 				templateUrl: 'components/common/notfound.view.html'
 			})
