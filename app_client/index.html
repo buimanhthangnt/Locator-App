@@ -12,6 +12,23 @@
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Poiret+One" rel="stylesheet">
 	<script src="bootstrap/js/jquery.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script>
+		function isMobile() {
+			if( navigator.userAgent.match(/Android/i)
+			|| navigator.userAgent.match(/webOS/i)
+			|| navigator.userAgent.match(/iPhone/i)
+			|| navigator.userAgent.match(/iPad/i)
+			|| navigator.userAgent.match(/iPod/i)
+			|| navigator.userAgent.match(/BlackBerry/i)
+			|| navigator.userAgent.match(/Windows Phone/i)
+			) return true;
+			else return false;
+		}
+		if (isMobile()) {
+			alert("This website does not support mobile devices. Please switch to desktop for best experience.");
+			$('#app').css("display", "none");
+		}
+	</script>
 	<style>
 		body {
 			background: url('images/auth.png');
@@ -21,7 +38,7 @@
 </head>
 
 <body>
-	<div ng-view autoscroll="true"></div>
+	<div ng-view autoscroll="true" id="app"></div>
 	<script src="public/angular/angular.min.js"></script>
 	<script src="public/angular/angular-route.min.js"></script>
 	<script src="public/angular/ui-bootstrap-tpls-2.5.0.min.js"></script>
