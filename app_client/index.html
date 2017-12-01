@@ -24,9 +24,12 @@
 			) return true;
 			else return false;
 		}
-		if (isMobile()) {
-			alert('This website does not support mobile devices. Please switch to desktop for best experience.');
-		}
+		$(document).ready(function(){
+			if (isMobile()) {
+				$("div").remove();
+				alert('This website does not support mobile devices. Please switch to desktop for best experience.');
+			}
+		});
 	</script>
 	<style>
 		body {
